@@ -5,6 +5,16 @@
 - Jekll의 적용.
 
 # Issues
+- 최적의 Tale을 위해 찾고찾는 중이지만 선택장애ing...
+```
+단순 : https://imyeonn.github.io/blog/
+plain-white : https://thelehhman.com/
+개발자 : https://devlopr.netlify.com/about
+태그, 카테고리 : http://xixia.info/jekyll-xixia/tags.html
+	              https://www.hifreud.com/
+next : https://simpleyyt.com/jekyll-theme-next/tags/
+gid : https://www.panxw.com/
+```
 
 # To-do
 - 검색기능
