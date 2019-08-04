@@ -31,3 +31,5 @@ gid : https://www.panxw.com/
 
 # Ref
 Origin : https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll
+Jekyll : http://jekyllthemes.org/page11/
+- 페이지 11까지 탐색했음..
