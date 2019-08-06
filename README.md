@@ -41,6 +41,6 @@ gid : https://www.panxw.com/
 # Wiki
 
 # Ref
-Origin : https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll
+Origin : https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll<br>
 Jekyll : http://jekyllthemes.org/page11/
 - 페이지 11까지 탐색했음..
