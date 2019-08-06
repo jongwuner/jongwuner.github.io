@@ -13,7 +13,9 @@
 
 
 # Develop History
-- Jekll의 적용.
+- Jekll(Wiki Theme)의 적용(19.08.06).
+  - wiki Themehttp://jekyllthemes.org/themes/wiki-blog/
+  - wiki git : https://github.com/lixizhi/lixizhi.github.io
 
 # Issues
 - 최적의 Tale을 위해 찾고찾는 중이지만 선택장애ing...
@@ -30,12 +32,9 @@ gid : https://www.panxw.com/
 # To-do
 - **무엇이 가능하고 무엇이 불가능한지를 공부해야한다.**
 - 검색기능
-- SNS 공유기능
-- 댓글
-- UI Plan
 - 게시판분류
 - 아카이브추가
-- CV페이지추가
+- CV페이지추가 ---> Project 페이지로 충당할 것.
  
 
 # Wiki
@@ -43,4 +42,3 @@ gid : https://www.panxw.com/
 # Ref
 Origin : https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll<br>
 Jekyll : http://jekyllthemes.org/page11/
-- 페이지 11까지 탐색했음..
