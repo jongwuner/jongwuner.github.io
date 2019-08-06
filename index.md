@@ -2,7 +2,6 @@
 layout: frontpage
 ---
 
-## Welcome to my website
+## 종우너의 개발자스러운 블로그
 
-This is the place where I share my ideas on topics like [Paracraft](http://www.paracraft.cn) software design, artificial intelligence and education. 
-Feel free to send me emails or join our team. 
+멋지게 사는척 뽐내고 싶은 직업이 개발자인 사람의 평범한 이야기.
