@@ -1,15 +1,9 @@
 ---
 layout: post
-title:  "test jjongwuner"
-date:   2018-12-27
 comments: true
+categories: demi
 ---
 
-* content
-{:toc}
+## testesttest
 
-### ParaCraft123123
-http://www.paracraft.cn
-
-### NPL123123
-http://www.nplproject.com
+Empty post template
