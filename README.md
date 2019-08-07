@@ -34,6 +34,10 @@ gid : https://www.panxw.com/
 # To-do
 - **무엇이 가능하고 무엇이 불가능한지를 공부해야한다.**
 - 글꼴변경
+  - 이쁜글꼴 : https://fonts.google.com/specimen/Bree+Serif?selection.family=Bree+Serif
+  - 바꾸는법에 대해서. @import ? 
+    - css? scss?
+    - https://frhyme.github.io/others/jekyll_korea_font_change/#%EA%B3%BC%EC%A0%95
 - 검색기능
 - 아카이브 꾸미기
 - CV페이지추가 ---> Project 페이지로 충당할 것.
