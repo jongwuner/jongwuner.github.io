@@ -35,6 +35,7 @@ gid : https://www.panxw.com/
 - **무엇이 가능하고 무엇이 불가능한지를 공부해야한다.**
 - 글꼴변경
   - 이쁜글꼴 : https://fonts.google.com/specimen/Bree+Serif?selection.family=Bree+Serif
+  - 나눔고딕이 이쁘다 : https://jungtaejtkim.github.io/blog/categories/
   - 바꾸는법에 대해서. @import ? 
     - css? scss?
     - https://frhyme.github.io/others/jekyll_korea_font_change/#%EA%B3%BC%EC%A0%95
