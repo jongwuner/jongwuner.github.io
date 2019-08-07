@@ -16,7 +16,7 @@ categories: DB
 
 
 
-![사진](/_posts/DB/img/201908072.jpg)
+![사진](https://github.com/jongwuner/jongwuner.github.io/blob/master/_posts/DB/img/201908071.PNG)
 
 
 
