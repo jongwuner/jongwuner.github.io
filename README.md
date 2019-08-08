@@ -20,8 +20,7 @@
   - wiki git : https://github.com/lixizhi/lixizhi.github.io
 
 # Issues
-![사진](./assets/images/captures1.PNG)
-- 사진이 안돼고있다..
+- 글꼴변경필요!!
 
 # To-do
 - **무엇이 가능하고 무엇이 불가능한지를 공부해야한다.**
