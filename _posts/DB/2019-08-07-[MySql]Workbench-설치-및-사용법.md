@@ -12,11 +12,11 @@ categories: DB
 
 ###### workbench를 실행시키면 다음화면과 같다.    
 
-여러가지 메뉴 중에 `create a scheme`버튼을  클릭한다.          
+여러가지 메뉴 중에 `create a scheme`버튼을  클릭한다. 1         
 
 
 
-![사진](https://github.com/jongwuner/jongwuner.github.io/blob/master/_posts/DB/img/201908071.PNG)
+![photo2](https://user-images.githubusercontent.com/16419202/62712822-8c846d00-ba36-11e9-97d0-80267f46e7d2.PNG)
 
 
 
