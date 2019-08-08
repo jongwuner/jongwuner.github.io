@@ -6,7 +6,7 @@ categories: DB
 
 # MySql 8.0.11 설치방법
 
-![사진](/_posts/DB/img/201908071.jpg)
+![photo_1](https://user-images.githubusercontent.com/16419202/62712499-eafd1b80-ba35-11e9-812e-da68d8b66e44.png)
 
 
 
