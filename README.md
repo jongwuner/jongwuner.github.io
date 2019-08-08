@@ -20,8 +20,7 @@
   - wiki git : https://github.com/lixizhi/lixizhi.github.io
 
 # Issues
-![사진](./assets/images/captures1.PNG)
-- 사진이 안돼고있다..
+- 글꼴변경필요!!
 
 # To-do
 - **무엇이 가능하고 무엇이 불가능한지를 공부해야한다.**
@@ -31,6 +30,7 @@
   - 바꾸는법에 대해서. @import ? 
     - css? scss?
     - https://frhyme.github.io/others/jekyll_korea_font_change/#%EA%B3%BC%EC%A0%95
+    - https://devyurim.github.io/development%20environment/github%20blog/2018/01/01/blog-5.html
 - 검색기능
 - 아카이브 꾸미기
 - CV페이지추가 ---> Project 페이지로 충당할 것.
