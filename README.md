@@ -30,6 +30,7 @@
   - 바꾸는법에 대해서. @import ? 
     - css? scss?
     - https://frhyme.github.io/others/jekyll_korea_font_change/#%EA%B3%BC%EC%A0%95
+    - https://devyurim.github.io/development%20environment/github%20blog/2018/01/01/blog-5.html
 - 검색기능
 - 아카이브 꾸미기
 - CV페이지추가 ---> Project 페이지로 충당할 것.
