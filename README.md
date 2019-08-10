@@ -20,21 +20,17 @@
   - wiki git : https://github.com/lixizhi/lixizhi.github.io
 
 # Issues
-- 글꼴변경필요!!
+- header UTF-8 인코딩 안됌.
 
 # To-do
 - **무엇이 가능하고 무엇이 불가능한지를 공부해야한다.**
-- 글꼴변경
-  - 이쁜글꼴 : https://fonts.google.com/specimen/Bree+Serif?selection.family=Bree+Serif
-  - 나눔고딕이 이쁘다 : https://jungtaejtkim.github.io/blog/categories/
-  - 바꾸는법에 대해서. @import ? 
-    - css? scss?
-    - https://frhyme.github.io/others/jekyll_korea_font_change/#%EA%B3%BC%EC%A0%95
-    - https://devyurim.github.io/development%20environment/github%20blog/2018/01/01/blog-5.html
 - 검색기능
 - 아카이브 꾸미기
-- CV페이지추가 ---> Project 페이지로 충당할 것.
- 
+- Tag기능 추가.
+- Main부분 layout나눠서 마우스스크롤.
+- post-list 날짜형식을 변경하는 것은 어떤지?
+- id : myArticle 어디에 있는지?
+- **{}** <- 이 코드에 대한 이해가 필요.
 
 # Wiki
 
