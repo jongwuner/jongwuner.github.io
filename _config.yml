@@ -1,6 +1,6 @@
-# Site settings
-title: 종우너의 개발자스러운 이야기
-email: jongwuner@gmail.com
+﻿# Site settings
+title: jDev
+email: jongwuner@naver.com
 description: jjongwuner's Ideas & Blogs
 # > # this means to ignore newlines until "baseurl:"
 #   Write an awesome description for your new site here. You can edit this
@@ -24,7 +24,7 @@ newsourceroot: https://github.com/jongwuner/jongwuner.github.io/new/master
 #duoshuo_url: "http://lixizhi.github.io"
 # disqus.com commenting system. please note that it is exclusive with duoshuo.com
 disqus_shortname: jongwuner
-disqus_url: "http://jongwuner.github.io"
+disqus_url: "https-jongwuner-github-io.disqus.com"
 #########################################
 #Google Fonts
 google_fonts: "Bree+Serif&display=swap"
