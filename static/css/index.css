@@ -4,7 +4,6 @@
 /* commom */
 body {
     background-image: url(http://7q5cdt.com1.z0.glb.clouddn.com/bg-canvas_bg.jpg);
-    /*font-family: 'Microsoft YaHei', 'SimHei', sans-serif;*/
     font-family: 'NanumBarunGothic', 'serif';
 }
 article p{
@@ -72,6 +71,9 @@ nav{
 	-o-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
 }
+.post-area h1{
+        font-weight : bolder;
+}
 .post-list-header{
 	padding: 15px 30px;
 	border-bottom: 1px solid #c0c0c0;
@@ -82,7 +84,6 @@ nav{
 	display: block;
 	padding:8px 30px 10px 30px; 
 	border-bottom:1px solid #ddd;
-    font-weight: bolder;
 
 	transition:0.4s ease; 
 	-webkit-transition:0.4s ease;
@@ -94,8 +95,10 @@ nav{
 }
 .post-list-item h2{
 	font-size: 20px;
-	margin: 8px 0 8px 0;
+	font-weight: bolder;
+    margin: 8px 0 8px 0;
 	padding: 0;
+
 }
 
 .post-list-item:hover{
