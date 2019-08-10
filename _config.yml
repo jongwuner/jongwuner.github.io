@@ -23,8 +23,8 @@ newsourceroot: https://github.com/jongwuner/jongwuner.github.io/new/master
 #duoshuo_shortname: lixizhi
 #duoshuo_url: "http://lixizhi.github.io"
 # disqus.com commenting system. please note that it is exclusive with duoshuo.com
-disqus_shortname: jongwuner
-disqus_url: "https-jongwuner-github-io.disqus.com"
+disqus_shortname: https-jongwuner-github-io.disqus.com
+disqus_url: "https://jongwuner.github.io"
 #########################################
 #Google Fonts
 google_fonts: "Bree+Serif&display=swap"
