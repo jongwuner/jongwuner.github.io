@@ -20,25 +20,24 @@
   - wiki git : https://github.com/lixizhi/lixizhi.github.io
 
 # Issues
-- 글꼴변경필요!!
+- header UTF-8 인코딩 안됌.
+- 사진크기 수정을 하고 싶다. 너무커.
 
 # To-do
 - **무엇이 가능하고 무엇이 불가능한지를 공부해야한다.**
-- 글꼴변경
-  - 이쁜글꼴 : https://fonts.google.com/specimen/Bree+Serif?selection.family=Bree+Serif
-  - 나눔고딕이 이쁘다 : https://jungtaejtkim.github.io/blog/categories/
-  - 바꾸는법에 대해서. @import ? 
-    - css? scss?
-    - https://frhyme.github.io/others/jekyll_korea_font_change/#%EA%B3%BC%EC%A0%95
-    - https://devyurim.github.io/development%20environment/github%20blog/2018/01/01/blog-5.html
 - 검색기능
 - 아카이브 꾸미기
-- CV페이지추가 ---> Project 페이지로 충당할 것.
- 
+- Tag기능 추가.
+- Main부분 layout나눠서 마우스스크롤.
+- post-list 날짜형식을 변경하는 것은 어떤지?
+- id : myArticle 어디에 있는지?
+- **{}** <- 이 코드에 대한 이해가 필요.
+- similar 포스트 밑에 자동으로 추가하는 법.
 
 # Wiki
 
 # Ref
 Origin : https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll<br>
-Jekyll : http://jekyllthemes.org/page11/
-매력적인 포트폴리오 : https://eungbean.github.io/
+Jekyll : http://jekyllthemes.org/page11/  
+매력적인 포트폴리오 : https://eungbean.github.io/  
+★우아한형제들 기술블로그 : http://woowabros.github.io/
