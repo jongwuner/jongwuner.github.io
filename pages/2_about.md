@@ -8,47 +8,93 @@ permalink: /about/
 * content
 {:toc}
 
-## About the site
-This is a personal website of LiXizhi, created with github and jekyll. 
-Create your own website is as easy as clone or fork a [template](https://github.com/LiXizhi/lixizhi.github.io) on github, and [commit](http://jekyllrb.com/docs/posts/) to `_posts` folder. 
+## **2019**
+### 08. 이임식
 
-### Admin tools
-* site [configuration file](https://github.com/LiXizhi/lixizhi.github.io/blob/master/_config.yml)
-* Jekyll + [lixizhi.duoshuo.com](http://lixizhi.duoshuo.com/admin/)
-* Jekyll + [lixizhi.disqus.com](http://lixizhi.disqus.com/admin/)
-* Jekyll theme templates: [jekyllthemes.org](http://jekyllthemes.org)
-   * Theme used: [cool-concise](http://jekyllthemes.org/themes/cool-concise-high-end/)
-* Jekyll official site: [jekyllrb.com](http://jekyllrb.com)
-* YAML for human readable markdown: [yaml.org](http://www.yaml.org/)
-* markdown reference: [kramdown](http://kramdown.gettalong.org/quickref.html)
+### 04. 수색 본부중대장 취임
 
-### About comments
-Add a variable called `comments` to the [YAML front matter](http://jekyllrb.com/docs/frontmatter/) and set its value to true. A sample might look like:
+### 03. 사단 보안감사 1등 
 
-    ---
-    layout: post
-    comments: true
-    # other options
-    ---
+###       육군 중위로 진급        
 
-### Sample markdowns
-Click view source at the bottom of the page
-
-* Embedding code
-{% highlight lua %}
-local function main()
-	print("hello world everyone")
-end
-{% endhighlight %}
+​        
 
 
-## About me
 
-My primary research interest is in artificial intelligence, programming and education. See my project page for details.
+## **2018**
+
+### 06. 수색대대 전입. 통신소대장 취임.
+
+### 05. 네트워크 관리사 취득
+
+### 03. 정보통신학교 소위 임관
+
+### 02. CATHOLIC UNIVERSITY 졸업
+
+### 01. EUROPE ICOOS        
+
+​        
 
 
-### 2005 Old Website 
-Here is my old personal website when I was in University. It was mostly on my projects and thoughts before 2005.
 
-* [Xizhi's old website before 2005](/oldsite2005/index.htm). 
+## **2017**
 
+### 12. 2019 COEX R&D 대전참여(문화산업부 장관상 수상)
+
+### 11. 교내 창업경진대회 출전(우수상 수상)
+
+### 09. ACM-ICPC Healer 출전(금상 수상)
+
+###       CATHOLIC SOS 멘토(문제해결기법, UNIX)
+
+### 07. TV를 품은 VR 팀 결성(COEX R&D 부스운영)
+
+### 06. 박정흠교수 알고리즘 연구실 보조원
+
+### 05. 장보기의 달인 김집사 팀 결성
+
+### 03. 알고리즘 학회 ALCUK MENTOR
+
+### 02. 훈련성적 200등        
+
+​        
+
+
+
+## **2016**
+
+### 09. 방탈출카페 '두개의 목소리' 기획총괄(디지털미디어콘텐츠 최우수상 수상)
+
+### 07. 전공학회 F.A.N 홈페이지제작팀 결성(Node.js, Angular.js)
+
+### 06. 층간소음 SOLUTION TEAM 결성(Android, IOT)
+
+### 02. ROTC 학군후보생 56기
+
+###       DIRECTORS 팀. UNKNOWN 전시회 음악팀장. (인사동 갤러리 이즈)
+
+### 01. 전공학회 F.A.N 회장        
+
+​        
+
+
+
+## **2015**
+
+### 06. C / C++ / 자료구조 스터디장
+
+### 03. 교내 학생회 CSIE        
+
+​        
+
+
+
+## **2014**
+
+### 09. ACM-ICPC 동상
+
+### 03. CATHOLIC UNIVERSITY 입학
+
+###        교내 학생회 
+
+### 01. NAVER TREND REPORTER 지원(우수 블로거 선발)
