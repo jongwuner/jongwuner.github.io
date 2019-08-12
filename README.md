@@ -35,6 +35,7 @@
 - id : myArticle 어디에 있는지?
 - **{}** <- 이 코드에 대한 이해가 필요.
 - similar 포스트 밑에 자동으로 추가하는 법.
+- Projects page : 프로젝트 연혁 및 간략한 소개, Archive Link. 밑에 스탯별 도식.
 
 # Wiki
 
