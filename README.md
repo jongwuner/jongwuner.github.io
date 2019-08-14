@@ -1,4 +1,4 @@
-# 종우너의 개발자스러운 블로그.<br>
+# 종우너의 개발자스러운 이야기<br>
 **URL :** https://jongwuner.github.io/<br>
  일상을 제외한, 공부, 행동습관, 철학(알고리즘스러운) 등을 여기에 몽땅! 
 <br>
@@ -27,6 +27,8 @@
 
 # To-do
 - **무엇이 가능하고 무엇이 불가능한지를 공부해야한다.**
+- **Post가 눈에 잘 안들어옴. UI/UX**
+  - https://jongwuner.github.io/2016/06/04/MySql-%EC%9E%90%EC%A3%BC%EC%93%B0%EB%8A%94-SQL%EB%AC%B8-%EB%AA%A8%EC%9D%8C/
 - 검색기능
 - 아카이브 꾸미기
 - Tag기능 추가.
