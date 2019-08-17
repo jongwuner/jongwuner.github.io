@@ -30,6 +30,7 @@
 - **Post가 눈에 잘 안들어옴. UI/UX**
   - https://jongwuner.github.io/2016/06/04/MySql-%EC%9E%90%EC%A3%BC%EC%93%B0%EB%8A%94-SQL%EB%AC%B8-%EB%AA%A8%EC%9D%8C/
 - 검색기능
+- **글 마다 목차.!** (Ref. 검색이 있는 docs)
 - 아카이브 꾸미기
 - Tag기능 추가.
 - Main부분 layout나눠서 마우스스크롤.
