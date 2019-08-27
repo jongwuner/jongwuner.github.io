@@ -69,11 +69,11 @@ permalink: /about/
 
 ## **2016**
 
-### - 방탈출카페 '두개의 목소리' 기획총괄(디지털미디어콘텐츠 최우수상 수상)(11)
+### - 방탈출카페 '두개의 목소리' 기획총괄(디지털미디어콘텐츠 최우수상 수상)(jQuery)(11)
 
 ### - 전공학회 F.A.N 홈페이지제작팀 결성(Node.js, Angular.js)(07)
 
-### - 층간소음 SOLUTION TEAM 결성(Android, IOT)(06)
+### - 층간소음 SOLUTION TEAM 결성(Android, IOT,Rasbery)(06)
 
 ### - ROTC 학군후보생 56기(03)
 
