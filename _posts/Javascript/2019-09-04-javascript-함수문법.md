@@ -16,10 +16,43 @@ categories: Javascript
             i += 1;
         }
     }
-    numberint();
+    numbering();
+	numbering();
 </script>
 ...
 ```
 
 
+
+## **다양한 정의방법**
+
+> 기본적인 함수 정의
+
+```javascript
+function a(){
+	return 'abcd';
+}
+...
+a()
+```
+
+
+
+> 변수에 함수 넣기
+
+```javascript
+numbering = function(arg){
+	retrun arg;
+}
+```
+
+
+
+> 익명함수
+
+```javascript
+(function(arg){
+	return arg;
+})()
+```
 
