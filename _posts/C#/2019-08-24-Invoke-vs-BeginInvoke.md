@@ -29,11 +29,11 @@ Winform 프로그래밍을 하면서 쓰레드의 개념이 상당히 중요해�
 
 Invoke가 필요한 Thread(OtherThread)라면 True MainThread(UI Thread)라면 False를 반환한다.
 
-
+**둘다 대리자(Delegate) 를 호출한다는 개념**
 
 ## **부연설명**
 
-멀티스레드 환경에서 데이터 보호를 위해 Invoke를 써야 합니다.
+멀티스레드 환경에서 데이터 보호를 위해 beginInvoke를 써야 합니다.
 
 
 
@@ -65,9 +65,135 @@ Main() 함수를 보시면 폼을 띄우죠? 결국 메인 스레드가 메인�
 
 
 
+모든 프로그램은 기본적으로 하나의 쓰레드로 시작이 된다. 따라서 폼을 화면에 그리는 메시지와 이벤트들도 그 쓰레드 안에서 구동이 된다. 하지만 사용자가 시작한 쓰레드는 이 쓰레드와는 별개로 실행이 된다. 따라서 이 커스텀 쓰레드에서 UI에 직접 접근을 하면 적절한 마샬링 없이 다른 쓰레드를 침범하는 것이다 (Cross Thread). 다시 말해, UI 쓰레드가 열심히 화면에 폼을 그리고 있는데 갑자기 다른 쓰레드가 와서 딴 짓을 하고 가는 꼴이 되버리는 것이다.
+
+출처 - 
+
+https://kworks.tistory.com/119
+
+![1568538047344](C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1568538047344.png)
+
+worker Thread가 열심히 HookingInfo를 잡고 있다가, Output을 호출해서 왔는데, 
+
+InvokeRequired. -> 여기는 UI의 영역인데 worker thread가 왔네? BeginInvoke를 통해 위임한다!
+
+그 BeginInvoke를 통해 위임된 Output대리자는 textOutput.AppendText(strOutput)을 정상실행한다.
 
 
-https://cartiertk.tistory.com/67
+
+## **Invoke 예시**
+
+```C#
+/*
+The following example demonstrates the 'Invoke(Delegate)' method of 'Control class.
+A 'ListBox' and a 'Button' control are added to a form, containing a delegate
+which encapsulates a method that adds items to the listbox.This function is executed
+on the thread that owns the underlying handle of the form. When user clicks on button
+the above delegate is executed using 'Invoke' method.
+
+
+*/
+
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Threading;
+
+   public class MyFormControl : Form
+   {
+      public delegate void AddListItem();
+      public AddListItem myDelegate;
+      private Button myButton;
+      private Thread myThread;
+      private ListBox myListBox;
+      public MyFormControl()
+      {
+         myButton = new Button();
+         myListBox = new ListBox();
+         myButton.Location = new Point(72, 160);
+         myButton.Size = new Size(152, 32);
+         myButton.TabIndex = 1;
+         myButton.Text = "Add items in list box";
+         myButton.Click += new EventHandler(Button_Click);
+         myListBox.Location = new Point(48, 32);
+         myListBox.Name = "myListBox";
+         myListBox.Size = new Size(200, 95);
+         myListBox.TabIndex = 2;
+         ClientSize = new Size(292, 273);
+         Controls.AddRange(new Control[] {myListBox,myButton});
+         Text = " 'Control_Invoke' example";
+         myDelegate = new AddListItem(AddListItemMethod);
+      }
+      static void Main()
+      {
+         MyFormControl myForm = new MyFormControl();
+         myForm.ShowDialog();
+      }
+      public void AddListItemMethod()
+      {
+         String myItem;
+         for(int i=1;i<6;i++)
+         {
+            myItem = "MyListItem" + i.ToString();
+            myListBox.Items.Add(myItem);
+            myListBox.Update();
+            Thread.Sleep(300);
+         }
+      }
+      private void Button_Click(object sender, EventArgs e)
+      {
+         myThread = new Thread(new ThreadStart(ThreadFunction));
+         myThread.Start();
+      }
+      private void ThreadFunction()
+      {
+         MyThreadClass myThreadClassObject  = new MyThreadClass(this);
+         myThreadClassObject.Run();
+      }
+   }
+
+// The following code assumes a 'ListBox' and a 'Button' control are added to a form, 
+// containing a delegate which encapsulates a method that adds items to the listbox.
+
+   public class MyThreadClass
+   {
+      MyFormControl myFormControl1;
+      public MyThreadClass(MyFormControl myForm)
+      {
+         myFormControl1 = myForm;
+      }
+
+      public void Run()
+      {
+         // Execute the specified delegate on the thread that owns
+         // 'myFormControl1' control's underlying window handle.
+         myFormControl1.Invoke(myFormControl1.myDelegate);
+      }
+   }
+```
+
+
+
+
+
+## **BeginInvoke 예시**
+
+```C#
+public delegate void InvokeDelegate();
+
+private void Invoke_Click(object sender, EventArgs e)
+{
+   myTextBox.BeginInvoke(new InvokeDelegate(InvokeMethod));
+}
+public void InvokeMethod()
+{
+   myTextBox.Text = "Executed the given delegate";
+}
+```
+
+
+
+
 
 ## 마샬링
 
@@ -78,5 +204,14 @@ https://cartiertk.tistory.com/67
 ## References 
 
 1. https://hjjungdev.tistory.com/94 
-2. 다른 Thread를 통해 UI접근 1편 : https://ddochea.tistory.com/11?category=568955
-3. 다른 Thread를 통해 UI접근 2편 : https://ddochea.tistory.com/12?category=568955
+2. https://cartiertk.tistory.com/67
+3. 다른 Thread를 통해 UI접근 1편 : https://ddochea.tistory.com/11?category=568955
+4. 다른 Thread를 통해 UI접근 2편 : https://ddochea.tistory.com/12?category=568955
+
+4. BeginInvoke vs Invoke 부연설명 : http://www.masque.kr/free/383086
+
+5. BeginInvoke 부연설명 2 : https://docs.microsoft.com/ko-kr/dotnet/api/system.windows.forms.control.begininvoke?view=netframework-4.8
+
+6. Invoke 부연설명 : https://docs.microsoft.com/ko-kr/dotnet/api/system.windows.forms.control.invoke?view=netframework-4.8
+
+7. beginInvoke, Invoke이용해서 Thread ID 구하기 : https://freeprog.tistory.com/105?category=615404
