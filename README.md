@@ -2,6 +2,7 @@
 **URL :** https://jongwuner.github.io/<br>
  일상을 제외한, 공부, 행동습관, 철학(알고리즘스러운) 등을 여기에 몽땅! 
 <br>
+
 1. **1D1C**의 핵심. (위대한 일상)
 2. **철학**(알고리즘스러운)
 3. 개발자**면접** 때 신뢰감을 형성하기 위함.
@@ -28,6 +29,7 @@
 # To-do
 - **무엇이 가능하고 무엇이 불가능한지를 공부해야한다.**
 - **Post가 눈에 잘 안들어옴. UI/UX**
+  
   - https://jongwuner.github.io/2016/06/04/MySql-%EC%9E%90%EC%A3%BC%EC%93%B0%EB%8A%94-SQL%EB%AC%B8-%EB%AA%A8%EC%9D%8C/
 - 검색기능
 - **글 마다 목차.!** (Ref. 검색이 있는 docs)
@@ -39,10 +41,12 @@
 - **{}** <- 이 코드에 대한 이해가 필요.
 - similar 포스트 밑에 자동으로 추가하는 법.
 - Projects page : 프로젝트 연혁 및 간략한 소개, Archive Link. 밑에 스탯별 도식.
-- 큐플레이!!
+
+  
 
 # How
 - 어떤 공부를 시작하게 되면, post 양식부터 만들고 거기에다가 채워넣는다!
+- 이게 또 요즘 잘 안되기 시작했다.
 
 # Ref
 Origin : https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll<br>
