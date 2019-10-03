@@ -46,7 +46,7 @@
 
 # How
 - 어떤 공부를 시작하게 되면, post 양식부터 만들고 거기에다가 채워넣는다!
-- 이게 또 요즘 잘 안되기 시작했다.
+- 이게 또 요즘 잘 안되기 시작했다..
 
 # Ref
 Origin : https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll<br>
