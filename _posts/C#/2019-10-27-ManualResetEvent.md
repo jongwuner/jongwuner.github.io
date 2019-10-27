@@ -134,6 +134,52 @@ Thread_5 ends.
 ## Ex2.
 
 ````C#
+using System;
+using System.Threading;
+
+public class Example
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Main 시작\n");
+        MyCalculator Ca = new MyCalculator();
+
+        ThreadStart th1 = new ThreadStart(Ca.MultiNum);
+        ThreadStart th2 = new ThreadStart(Ca.MultiNum);
+
+        Thread t_1 = new Thread(th1);
+        Thread t_2 = new Thread(th2);
+
+        t_1.Start();
+        t_2.Start();
+        Console.WriteLine("Main종료\n");
+        MyCalculator.control_Thread.Set();
+    }
+}
+
+class MyCalculator
+{
+    //ManualResetEvent 를 static으로 선언 후 초기값을 false로 함.
+    public static ManualResetEvent control_Thread = new ManualResetEvent(false);
+    int int_num = 1;
+
+    public void MultiNum()
+    {
+        // ManualResetEvent의 신호 signal을 확인한다.
+        // Set()이면 true, Or Reset()이면 false
+
+        if (control_Thread.WaitOne())
+        {
+            for (int i=1; i<=10; i++)
+            {
+                Console.WriteLine(Thread.CurrentThread.GetHashCode() + "= 1 * "+int_num + " = " + 1 * int_num + "\t");
+                int_num++;
+            }
+        }
+        control_Thread.Reset();
+    }
+}
+
 
 ````
 
@@ -144,3 +190,4 @@ Thread_5 ends.
 ## Reference
 
 [멀티스레딩 동기화 : ManualResetEvent](https://itnhappy.tistory.com/24)
+
