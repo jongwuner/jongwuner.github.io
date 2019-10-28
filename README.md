@@ -58,4 +58,5 @@ Jekyll : http://jekyllthemes.org/page11/
 ★우아한형제들 기술블로그 : http://woowabros.github.io/  
 Tag와 Categori UI : https://code-examples.net/ko  
 검색이 있는 docs : https://www.joinc.co.kr/w/FrontPage  
-김남훈님 포트폴리오 : https://namhoon.kim/
+김남훈님 포트폴리오 : https://namhoon.kim/<br>
+개츠비 : https://jbee.io/etc/intro-new-blog/
