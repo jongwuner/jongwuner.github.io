@@ -1,0 +1,22 @@
+I"3<h2 id="npm-vs-yarn"><strong>npm vs yarn</strong></h2>
+
+<h2 id="npm-전역패키지-확인법"><strong>npm 전역패키지 확인법</strong></h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>npm ls -g --depth=0
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="npm-패키지-삭제하는-법">npm 패키지 삭제하는 법</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>npm install module_name			# npm 모듈 설치(로컬 설치)
+npm install -g module_name		# npm 모듈 설치(전역 설치)
+npm update module_name			# npm 모듈 업데이트
+npm uninstall module_name		# npm 모듈 삭제
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>경로 : C:\Users\jklh0\AppData\Roaming\npm\node_modules</p>
+:ET

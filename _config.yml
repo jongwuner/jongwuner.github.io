@@ -1,38 +1,125 @@
-﻿# Site settings
-title: 종우너의 개발자스러운 이야기
-email: jongwuner@naver.com
-description: jjongwuner's Ideas & Blogs
-# > # this means to ignore newlines until "baseurl:"
-#   Write an awesome description for your new site here. You can edit this
-#   line in _config.yml. It will appear in your document head meta (for
-#   Google search results) and in your feed.xml site description.
+# Site settings
+title: "VAGABOND"
+SEOTitle: vagabond | jjongwuner's Blog
+header-img: img/home-bg.jpg
+email: jklh0202@gmail.com
+description: "개발자 종우너의 개발이야기"
+keyword: "22hours, TVbroodVR, Git"
+url: "https://jongwuner.github.io"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
-# baseurl: "" # the subpath of your site, e.g. /blog/
-# url: "http://yourdomain.com" # the base hostname & protocol for your site
-# twitter_username: jekyllrb
+# Publish posts or collection documents with a future date.
+future: true
 
-github_username: jongwuner
-permalink: /:year/:month/:day/:title/
+# SNS settings
+RSS: false
+weibo_username:     jongwuner
+zhihu_username:     jongwuner
+github_username:    jongwuner
+twitter_username:   jongwuner
+#facebook_username:  huxpro
+#linkedin_username:  firstname-lastname-idxxxx
 
-# this is the url root of the view source link on the footer page.
-viewsourceroot: https://github.com/jongwuner/jongwuner.github.io/blob/master/
-# this is the url root of the create page link on the footer page.
-newsourceroot: https://github.com/jongwuner/jongwuner.github.io/new/master
-#########################################
-# for duoshuo.com commenting system, uncomment following line if you do not want to include duoshuo.com. 
-#duoshuo_shortname: lixizhi
-#duoshuo_url: "http://lixizhi.github.io"
-# disqus.com commenting system. please note that it is exclusive with duoshuo.com
-disqus_shortname: jchudev
-disqus_url: "https://jongwuner.github.io"
-#########################################
-#Google Fonts
-google_fonts: "Bree+Serif&display=swap"
+
 
 # Build settings
-markdown: kramdown
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+# If you have timezone issue (e.g. #68) in China, uncomment to use this:
+#timezone: CN
 
-# highlight
-# highlighter: pygments
-# highlighter: rouge
-# highlighter: false
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+# make sure you have this gem installed
+# `$ gem install jekyll-paginate`
+plugins: [jekyll-paginate]
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+
+
+# Disqus settings
+disqus_username: jjongwuner
+
+# Netease settings
+netease_comment: false
+
+
+
+# Analytics settings
+# Baidu Analytics
+# ba_track_id: [your track id]
+
+# Google Analytics
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: huangxuan.me
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "22Hours -ing"
+sidebar-avatar: /img/avatar-hux-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+
+
+# Friends
+friends: [
+    {
+    #     title: "Su",
+    #     href: "http://su.gallery/"
+    # },{
+        title: "정롸니",
+        href: "https://github.com/winterlood"
+    },{
+        title: "신정환",
+        href: "https://github.com/damin8"
+    },{
+        title: "용우형님",
+        href: "https://github.com/uyu423"
+    },{
+        title: "멘토킴선욱",
+        href: "https://github.com/serenity320"
+    },
+    {
+        title: "22HOURS",
+        href: "https://developers.22hours.online"
+    }
+]

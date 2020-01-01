@@ -1,0 +1,34 @@
+I"}<p>[TOC]</p>
+
+<h2 id="pypy3-개발환경windows"><strong>Pypy3</strong> 개발환경(Windows)</h2>
+
+<h2 id="python의-특징"><strong>Python의 특징</strong></h2>
+
+<ul>
+  <li>선언이 굳이 필요없다는 점이 아주 특이하다. 왜?</li>
+</ul>
+
+<h2 id="python의-입력"><strong>Python의 입력</strong></h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;</span> <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="o">&gt;&gt;</span> <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">' '</span><span class="p">)</span> <span class="c1"># 공백을 기준으로 복수개를 받겠다는 의미.
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">input_data</code>에는 <code class="highlighter-rouge">default</code>로 string 형식으로 저장된다.</li>
+</ul>
+
+<h2 id="python의-출력"><strong>Python의 출력</strong></h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>&gt;&gt; print(input_data)
+1
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li></li>
+</ul>
+:ET

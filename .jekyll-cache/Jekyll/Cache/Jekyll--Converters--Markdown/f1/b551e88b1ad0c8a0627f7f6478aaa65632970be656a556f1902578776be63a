@@ -1,0 +1,10 @@
+I"k<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>DWORD WINAPI WaitForSingleObject(
+  _In_ HANDLE hHandle,
+  _In_ DWORD  dwMilliseconds
+);
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

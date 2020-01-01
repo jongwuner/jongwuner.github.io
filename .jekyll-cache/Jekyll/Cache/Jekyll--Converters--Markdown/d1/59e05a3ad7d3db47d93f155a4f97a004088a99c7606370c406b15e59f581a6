@@ -1,0 +1,82 @@
+I"<h1 id="rest-api">REST API</h1>
+
+<p>The REST API consists of methods , resources, and messages.<br />
+For example, when you have an example of “Call a method that takes jjongwuner as a user”<br />
+<code class="highlighter-rouge">The act is called the method.</code>, 
+<code class="highlighter-rouge">User is a resource.</code>, 
+<code class="highlighter-rouge">jjongwuner is a user message.</code>
+<br /><br /></p>
+
+<h2 id="exercise-"><strong>Exercise :</strong></h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>{
+   "user" : {
+          "name" : "jjongwuner"
+    }
+}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="http-methodcrud">HTTP Method(CRUD)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Mean</th>
+      <th>IdemPotent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Post</td>
+      <td>Create</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>Select(Read)</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>PUT</td>
+      <td>Update</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>Delete</td>
+      <td>YES</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="rests-resource">REST’s Resource</h2>
+
+<p>jjongwuner is a user message. 
+REST is a <code class="highlighter-rouge">resource-oriented</code> architecture style, so all definitions are expressed in nouns (method invocation, push, etc.)</p>
+
+<p>If you define a resource type called user as 
+<code class="highlighter-rouge">http://myweb/users</code> a resource with an id of jjongwuner is <code class="highlighter-rouge">http://myweb/users /jjongwuner.</code> As mentioned above, there may be confusion when defining command-oriented APIs.</p>
+
+<p><strong>Ex</strong>. 
+“Send a push message” is usually an existing  <strong>RPC (Remote Procedure Call)</strong> or a functional approach. It can be wrongly defined as <code class="highlighter-rouge">/myweb/sendpush</code>, but if you define it as a verb -&gt; noun, It is a little easier to express. If you change the definition to “Create a push message request”. 
+<strong>API Format:</strong> <code class="highlighter-rouge">POST/myweb/push</code>. It is the design of REST type to be defined as resource type based noun form.</p>
+
+<p><strong>Ex.</strong> Simple User Creation API HTTP Post,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>http://myweb/users/{ 
+      "name": "jjongwuner",
+      "address": "seoul" 
+}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

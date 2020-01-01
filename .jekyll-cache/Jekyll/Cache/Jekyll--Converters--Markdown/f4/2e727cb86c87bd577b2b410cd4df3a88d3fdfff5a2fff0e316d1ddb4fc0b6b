@@ -1,0 +1,24 @@
+I"¢<h2 id="installation"><strong>Installation</strong></h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>npm install -g react-native-ignite
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>npm i -g react-native-cli
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>npm i ignite-cli
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>yarn global add ignite-cli
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567855035872.png" alt="1567855035872" /></h2>
+
+<ol>
+  <li>ignite - youtube: https://www.youtube.com/watch?v=5SVLs_NN_uY</li>
+</ol>
+:ET

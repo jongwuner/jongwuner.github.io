@@ -1,0 +1,57 @@
+I"7<h2 id="material-ui에서-가져오기"><strong>Material-ui에서 가져오기</strong></h2>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567080100955.png" alt="1567080100955" /></p>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567080048845.png" alt="1567080048845" /></p>
+
+<h3 id="소스코드">소스코드</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">makeStyles</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@material-ui/core/styles</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">CircularProgress</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@material-ui/core/CircularProgress</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">useStyles</span> <span class="o">=</span> <span class="nx">makeStyles</span><span class="p">(</span><span class="nx">theme</span> <span class="o">=&gt;</span> <span class="p">({</span>
+  <span class="na">progress</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">margin</span><span class="p">:</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">spacing</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+  <span class="p">},</span>
+<span class="p">}));</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">CircularIndeterminate</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">useStyles</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">CircularProgress</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">progress</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">CircularProgress</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">progress</span><span class="p">}</span> <span class="nx">color</span><span class="o">=</span><span class="dl">"</span><span class="s2">secondary</span><span class="dl">"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="references">References<em>**</em></h2>
+
+<ol>
+  <li><strong>Material-ui</strong> : https://material-ui.com/demos/tables/</li>
+  <li>동빈나 Youtube : https://www.youtube.com/watch?v=YO9CqrnxbFU&amp;list=PLRx0vPvlEmdD1pSqKZiTihy5rplxecNpz&amp;index=6</li>
+</ol>
+:ET

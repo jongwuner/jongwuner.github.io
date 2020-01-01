@@ -1,0 +1,79 @@
+I"�
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567184807281.png" alt="1567184807281" /></p>
+
+<h2 id="cpu란"><strong>CPU란?</strong></h2>
+
+<ul>
+  <li>중앙처리장치(Central Process Unit)</li>
+  <li>컴퓨터 내부에서 시스템들을 통제함과 동시에 프로그램을 실행하는 가장 기본적인 부품이며 메인보드에 장착된다.</li>
+  <li>인체에 비유했을 때 컴퓨터의 두뇌라고 할 수 있으며, 컴퓨터로 들어오거나 나가는 모든 정보를 기억하고 출력하며 프로그램의 연산을 실행하는 장치입니다.</li>
+  <li>소켓, 제조공정, 코어, 연산체계, 쓰레드, 동작속도(쿨럭), GPU 등 여러 세부 성능을 비교할 수 있다.</li>
+</ul>
+
+<h2 id="이용률"><strong>이용률</strong></h2>
+
+<ul>
+  <li>= CPU 점유율</li>
+</ul>
+
+<h2 id="그래프"><strong>그래프</strong></h2>
+
+<ul>
+  <li>60초간의 기록을 가지고 있는다.</li>
+</ul>
+
+<h2 id="속도clock"><strong>속도</strong>(=Clock)</h2>
+
+<ul>
+  <li>동작속도(=클럭)은 1초에 CPU가 몇 단계의 작업을 할 수 있는지 주파수 단위인 Hz(헤르츠)로 나타낸 수치이다.</li>
+  <li></li>
+</ul>
+
+<h2 id="프로세스-넘버">프로세스 넘버</h2>
+
+<h2 id="스레드-넘버"><strong>스레드 넘버</strong></h2>
+
+<h2 id="핸들넘버"><strong>핸들넘버</strong></h2>
+
+<h2 id="작동시간"><strong>작동시간</strong></h2>
+
+<h2 id="기본속도"><strong>기본속도</strong></h2>
+
+<h2 id="소켓"><strong>소켓</strong></h2>
+
+<h2 id="코어"><strong>코어</strong></h2>
+
+<ul>
+  <li>CPU에서 일을 하는 일꾼이라고 생각하면 된다. 1코어에 1가지 일을 한다.</li>
+</ul>
+
+<h2 id="하이퍼스레드"><strong>하이퍼스레드</strong></h2>
+
+<ul>
+  <li>A작업을 하는데 코어의 50%를 쓰고, 남는 50%로 B작업을 할 수 있다. 여기서 작업은 스레드 단위이다.</li>
+  <li>한 개의 코어를 여러개의 쓰레드로 나누는 것을 하이퍼스레드라고 한다.</li>
+</ul>
+
+<h2 id="논리프로세서"><strong>논리프로세서</strong></h2>
+
+<h2 id="가상화"><strong>가상화</strong></h2>
+
+<h2 id="l1-l2-l3-캐시"><strong>L1, L2, L3 캐시</strong></h2>
+
+<ul>
+  <li>캐시메모리는 CPU내부의 저장공간임.</li>
+  <li>컴퓨터에서 빈번하게 사용되는 데이터를 저장해놓기 때문에 반복적인 작업을 할 때 속도를 향상해주는 능력이 있음.</li>
+</ul>
+
+<h2 id="터보부스트"><strong>터보부스트</strong></h2>
+
+<ul>
+  <li>동작속도 옆에 위치한 터보부스트는 순간적으로 작동할 수 있는 한계클럭이다.</li>
+</ul>
+
+<h2 id="gpu"><strong>GPU</strong></h2>
+
+<ul>
+  <li>CPU에 장착되어있는 그래픽 처리장치</li>
+</ul>
+:ET

@@ -1,0 +1,18 @@
+I"G<p>[TOC]</p>
+
+<h2 id="dlldynamic-link-library이란">DLL(Dynamic Link Library)이란?</h2>
+
+<p>dll은 동적 라이브러리.</p>
+
+<h3 id="lib이란">lib이란?</h3>
+
+<p>lib는 정적 라이브러리. dll과 lib 둘다 외부의 코드를 사용하기 위한 Library라고 생각하면 된다. dll는 Runtime중에 필요하고, lib는 Compile중에 필요하다.</p>
+
+<h2 id="참고">참고</h2>
+
+<ol>
+  <li>lib vs dll : https://wnsgml972.github.io/setting/dll_lib.html</li>
+  <li>DLL 분석방법 : https://www.slideshare.net/ssuserc5136d/dll-40135574?next_slideshow=1</li>
+</ol>
+
+:ET

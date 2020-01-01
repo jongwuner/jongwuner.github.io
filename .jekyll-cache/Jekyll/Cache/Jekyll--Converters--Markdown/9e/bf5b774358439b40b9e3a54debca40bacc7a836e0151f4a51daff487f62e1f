@@ -1,0 +1,89 @@
+I",<h2 id="c-서비스애플리케이션-프로젝트-만드는-법"><strong>C# 서비스애플리케이션 프로젝트 만드는 법</strong></h2>
+
+<p>윈도우즈 서비스 프로그램은 보통 Windows OS가 구동되면서 시스템에 의해 백그라운에서 자동으로 실행되는 프로그램이다. Windows Service 프로그램은 일반 콘솔이나 UI 프로그램과 달리, Session 0라고 불리우는 백그운드에서 실행되어 사용자가 UI 출력을 볼 수 없다. 따라서, 일반적으로 Event Log에 로그를 남기거나 파일과 같은 외부 저장 장치에 결과를 남기곤 한다.</p>
+
+<p><img src="http://www.csharpstudy.com/Practical/Image/Service-project.png" alt="Service Project Template" /></p>
+
+<p>Service1.cs 에서 Service1 클래스가 ServiceBase 클래스로부터 상속됨을 알 수 있다. Service1 클래스의 OnStart() 메서드는 서비스가 시작될 때 실행되며, OnStop() 메서드는 서비스가 멈출 때 실행된다.</p>
+
+<h3 id="예제">예제</h3>
+
+<pre><code class="language-C#">using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Linq;
+using System.ServiceProcess;
+using System.Text;
+using System.Threading.Tasks;
+using System.Timers;
+using System.Configuration;
+using System.IO;
+using System.Net;
+
+
+namespace WindowsService1
+{
+    public partial class Service1 : ServiceBase
+    {
+        private Timer timer;
+        private string dataFolder;
+
+        public Service1()
+        {
+            InitializeComponent();
+        }
+
+        protected override void OnStart(string[] args)
+        {
+            dataFolder = ConfigurationManager.AppSettings["DataFolder"];
+
+            timer = new Timer();
+            timer.Interval = 5 * 60 * 1000; // 5분마다 실행
+            timer.Elapsed += Timer_Elapsed; // Event가 발생하다. 
+            timer.Start();
+        }
+		//*elapse : 경과하다.
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            string outputFile = Path.Combine(dataFolder, "csharp-news.html");
+
+            WebClient cli = new WebClient();
+            cli.DownloadFile("http://csharp.news", outputFile);
+        }
+
+        protected override void OnStop()
+        {
+        }
+    }
+}
+
+</code></pre>
+
+<p><img src="http://www.csharpstudy.com/Practical/Image/Service-add-installer.png" alt="Windows Service Add Installer" /></p>
+
+<p><img src="C:\Users\jklh0\source\github\img\Windows Service App 2.PNG" alt="Windows Service App 2" /></p>
+
+<p><img src="C:\Users\jklh0\source\github\img\windows Service App.PNG" alt="windows Service App" /></p>
+
+<p><img src="C:\Users\jklh0\source\github\img\Windows Service App 4.PNG" alt="Windows Service App 4" /></p>
+
+<p><img src="C:\Users\jklh0\source\github\img\window service app 3.PNG" alt="window service app 3" /></p>
+
+<p>설치된 서비스를 삭제하기 위해서는 <code class="highlighter-rouge">InstallUtil.exe /u MyService.exe</code>명령을 수행하면 된다.</p>
+
+<h2 id="권한-오류">권한 오류</h2>
+
+<p><img src="C:\Users\jklh0\source\github\img\windows Service App 5.PNG" alt="windows Service App 5" /></p>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li>
+    <p>CSharpStudy : http://www.csharpstudy.com/Practical/Prac-service-program.aspx</p>
+  </li>
+  <li>Error 5 : Access is Denied : https://stackoverflow.com/questions/4267051/error-5-access-denied-when-starting-windows-service</li>
+  <li>How to add NETWORK SERVICE : https://serverfault.com/questions/469944/how-to-add-network-service-to-users-permission-group/469961</li>
+</ol>
+:ET

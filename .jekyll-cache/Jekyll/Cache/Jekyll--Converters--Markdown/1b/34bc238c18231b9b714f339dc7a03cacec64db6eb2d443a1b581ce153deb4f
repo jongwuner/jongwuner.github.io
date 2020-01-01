@@ -1,0 +1,43 @@
+I"<h2 id="고객정보를-삭제하는-방식"><strong>고객정보를 삭제하는 방식</strong></h2>
+
+<ol>
+  <li>실제로 DB안에서 삭제를 하는 방식</li>
+  <li>DB 인스턴스를 삭제했다고, 기록하는 방식<br /></li>
+</ol>
+
+<p><br /></p>
+
+<p>이번 프로젝트에서는 2번으로 진행을 하겠다. 2번으로 진행해야, 데이터가 언제 삭제되었는지 등의 정보를 알 수 있기 때문.</p>
+
+<h2 id="db-테이블-변경"><strong>DB 테이블 변경</strong></h2>
+
+<blockquote>
+  <p>테이블 구조 변경</p>
+</blockquote>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567339309270.png" alt="1567339309270" /></p>
+
+<pre><code class="language-mysql">ALTER TABLE CUSTOMER ADD createdDate DATETIME;
+ALTER TABLE CUSTOMER ADD deletedDate DATETIME;
+ALTER TABLE CUSTOMER ADD isDeleted INT;
+</code></pre>
+
+<p>이 프로젝트에서는 편의상 <code class="highlighter-rouge">createdDate</code>,<code class="highlighter-rouge"> isDeleted</code> 변수만 사용하기로 한다.</p>
+
+<blockquote>
+  <p>createDate와 isDeleted에 들어있는 NULL값들을 채워준다</p>
+</blockquote>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567339609295.png" alt="1567339609295" /></p>
+
+<p>편의상 이미 만들어졌던 인스턴스들은 createDate를 현재시간으로 넣어주고, isDeleted는 0으로 채워준다.</p>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567339780688.png" alt="1567339780688" /></p>
+
+<h2 id="references">References<em>**</em></h2>
+
+<ol>
+  <li><strong>Material-ui</strong> : https://material-ui.com/demos/tables/</li>
+  <li>동빈나 Youtube : https://www.youtube.com/watch?v=YO9CqrnxbFU&amp;list=PLRx0vPvlEmdD1pSqKZiTihy5rplxecNpz&amp;index=6</li>
+</ol>
+:ET

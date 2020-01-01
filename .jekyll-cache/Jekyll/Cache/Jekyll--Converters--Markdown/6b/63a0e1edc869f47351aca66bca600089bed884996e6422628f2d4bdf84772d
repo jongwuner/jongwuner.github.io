@@ -1,0 +1,41 @@
+I"�<p>[TOC]</p>
+
+<h2 id="c-개발환경windows"><strong>C#</strong> 개발환경(Windows)</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">IDE</code> : Visual Studio</li>
+  <li></li>
+</ul>
+
+<h2 id="c의-특징"><strong>C#의 특징</strong></h2>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">namespace</code> :</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">class</code> : class로 모든 코드를 감싸고 있다.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">WPF</code> :</p>
+  </li>
+</ul>
+
+<h2 id="c의-입력"><strong>C#의 입력</strong></h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;</span> <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="o">&gt;&gt;</span> <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">' '</span><span class="p">)</span> <span class="c1"># 공백을 기준으로 복수개를 받겠다는 의미.
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">input_data</code>에는 <code class="highlighter-rouge">default</code>로 string 형식으로 저장된다.</li>
+</ul>
+
+<h2 id="c의-출력"><strong>C#의 출력</strong></h2>
+
+<pre><code class="language-C#">Console.Write("Hello World!");
+Console.WriteLine("Hello World!");
+</code></pre>
+:ET

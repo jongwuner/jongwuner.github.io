@@ -1,0 +1,8 @@
+I"<h2 id="configurationmanagerappsetting">ConfigurationManager.AppSetting</h2>
+
+<pre><code class="language-C#">using System.Configuration;
+</code></pre>
+
+<p>그리고 <strong>참조</strong>에서 <code class="highlighter-rouge">System.Configuration.dll</code> 추가</p>
+
+:ET

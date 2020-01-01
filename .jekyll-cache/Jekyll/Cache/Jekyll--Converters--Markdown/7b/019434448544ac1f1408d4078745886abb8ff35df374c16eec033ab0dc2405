@@ -1,0 +1,148 @@
+I"C<p><a href="https://www.acmicpc.net/problem/13460">BOJ-17143-낚시왕</a></p>
+
+<h2 id="points--"><strong>Points : ★☆☆</strong></h2>
+
+<ul>
+  <li>DFS/BFS</li>
+  <li>10번이라는 Limit에 힌트인 것을 감지했어야 했다.</li>
+</ul>
+
+<h2 id="과정">과정</h2>
+
+<p><strong>1.</strong></p>
+
+<p>2개 구슬 동시에 굴리는 문제가 있엇어서 떠올렸는데, 하나씩 푸시했던 느낌이었다. 근데 조금 다르다고 느꼈는게이 문제는 기울이는 개념이고 이동할 수 잇는 경로의 최대로 이동하기 때문에, 조금 다르다.
+Q의 하나의 Node의 상태가 아예 두 공이 위치하고 있는 상태라고 생각했다.Visit이랑 Queue도 그렇게 설계하도록 하였다.</p>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567932493353.png" alt="1567932493353" /></p>
+
+<p><strong>2.</strong></p>
+
+<ul>
+  <li>
+    <p>예시 드는 습관.</p>
+  </li>
+  <li>
+    <p>복잡한 코드로는 코딩을 안하려는 습관.</p>
+  </li>
+</ul>
+
+<p><strong>3.</strong></p>
+
+<ul>
+  <li>
+    <p>그냥 15x15를 매번 보드판마다 찾을까? 이게 무슨말????</p>
+  </li>
+  <li>
+    <p>시간복잡도 왜 한번에 안 떠오르는가?</p>
+  </li>
+</ul>
+
+<p><strong>4.</strong></p>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567932604173.png" alt="1567932604173" /></p>
+
+<ul>
+  <li>
+    <p>R과 B중심의 BFS, 그전까지는 보드판 하나를 노드라고 봤기때문에 정보가 더 많고 저장할 것도 많고 탐색할 것도 더 많앗음.</p>
+  </li>
+  <li>
+    <p>하다보니 DFS까지도 될 것같더라. 깊이가 존재해서.</p>
+  </li>
+  <li>
+    <p>구현의 자신감이 부족한 모양인데, 자신감을 잃지 말자.</p>
+  </li>
+  <li>
+    <p>코드가 너무 길어서, 부분문제로 나눠서 전체문제를 구하는데, 코드를 단순화할 수 없다고 느ㅡ껴지면 그냥 길게 가야지</p>
+
+    <p><strong>—-&gt; Debugging이 엄청 힘들어진다는 것을 알아야 함.</strong></p>
+  </li>
+  <li>
+    <p><strong>다시짜는거 왜이렇게 싫어하는가!?!?!?</strong></p>
+  </li>
+  <li>
+    <p>시뮬레이션코드가 통과가 안되서 일단 <strong>Reposit</strong>에 올려두었음.**<br /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="source-">Source :**</h2>
+
+<pre><code class="language-C++">#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+#include &lt;queue&gt;
+using namespace std;
+int n, m, disc[11][11][11][11], bx, by, rx, ry;
+char a[11][11];
+int dx[] = { 0,0,1,-1 };
+int dy[] = { 1,-1,0,0 };
+int bfs() {
+    queue&lt;pair&lt;pair&lt;int, int&gt;, pair&lt;int,int&gt;&gt;&gt; qu;
+    qu.push({ {rx,ry},{bx,by} });
+    disc[rx][ry][bx][by] = 1;
+    int ret = 0;
+    while (qu.size()) {
+        int qs = qu.size();
+        while (qs--) {
+            int x = qu.front().first.first;
+            int y = qu.front().first.second;
+            int z = qu.front().second.first;
+            int w = qu.front().second.second;
+            qu.pop();
+            if (a[x][y] == 'O'&amp;&amp;a[x][y] != a[z][w])
+                return ret;
+            for (int i = 0; i &lt; 4; i++) {
+                int cx = x, cy = y, cz = z, cw = w;
+                while (a[cx + dx[i]][cy + dy[i]] != '#'&amp;&amp;a[cx][cy] != 'O') {
+                    cx += dx[i];
+                    cy += dy[i];
+                }
+                while (a[cz + dx[i]][cw + dy[i]] != '#'&amp;&amp;a[cz][cw] != 'O') {
+                    cz += dx[i];
+                    cw += dy[i];
+                }
+                if (cx == cz&amp;&amp;cy == cw) {
+                    if (a[cx][cy] == 'O')continue;
+                    if (abs(cx - x) + abs(cy - y) &lt; abs(cz - z) + abs(cw - w)) {
+                        cz -= dx[i];
+                        cw -= dy[i];
+                    }
+                    else {
+                        cx -= dx[i];
+                        cy -= dy[i];
+                    }
+                }
+                if (disc[cx][cy][cz][cw])continue;
+                qu.push({ {cx,cy} ,{cz,cw} });
+                disc[cx][cy][cz][cw] = 1;
+            }
+        }
+        if (ret == 10)
+            return -1;
+        ret++;
+    }
+    return -1;
+}
+int main() {
+    scanf("%d%d", &amp;n, &amp;m);
+    for (int i = 0; i &lt; n; i++) {
+        getchar();
+        for (int j = 0; j &lt; m; j++) {
+            scanf("%c", &amp;a[i][j]);
+            if (a[i][j] == 'B') {
+                bx = i;
+                by = j;
+            }
+            else if (a[i][j] == 'R') {
+                rx = i;
+                ry = j;
+            }
+        }
+    }
+    printf("%d\n", bfs());
+    return 0;
+}
+</code></pre>
+
+:ET

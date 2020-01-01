@@ -1,0 +1,97 @@
+I".<h2 id="registry-란"><strong>Registry 란?</strong></h2>
+
+<p><strong>레지스트리</strong>란 윈도우계열 시스템에서 사용하는 시스템 구성 정보를 저장한 데이터베이스를 말한다.</p>
+
+<p>프로세스종류, 주기억장치의 용량, 주변장치의 정보, 시스템 매개변수, 응용소프웨어에서 취급하는 파일 타입과 매개변수 등을 기록한 <strong>저장소</strong>를 말한다.<br /></p>
+
+<p><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/16419202/66094385-cd2fdb00-e5ce-11e9-8a5b-5b24792257f5.png" alt="image" /></p>
+
+<p><br /></p>
+
+<h3 id="기본키-5개"><strong>기본키 5개</strong></h3>
+
+<ul>
+  <li>
+    <p><strong>HKEY_CLASSES_ROOT</strong></p>
+
+    <p><a href="https://ko.wikipedia.org/w/index.php?title=파일_연결&amp;action=edit&amp;redlink=1">파일 연결</a>, <a href="https://ko.wikipedia.org/wiki/객체_연결_삽입">OLE</a> 객체 클래스 ID와 같은 등록된 응용 프로그램의 정보를 담고 있다.</p>
+  </li>
+  <li>
+    <p><strong>HKEY_CURRENT_USER</strong></p>
+
+    <p>현재 로그인한 사용자의 설정을 담고 있다.</p>
+  </li>
+  <li>
+    <p><strong>HKEY_LOCAL_MACHINE</strong></p>
+
+    <p>컴퓨터의 모든 사용자의 설정을 담고 있다.</p>
+  </li>
+  <li>
+    <p><strong>HKEY_USERS</strong></p>
+
+    <p>컴퓨터에서 사용 중인 각 사용자 프로파일에 대한 HKEY_CURRENT_USER 키에 일치하는 서브키를 담고 있다.</p>
+  </li>
+  <li>
+    <p><strong>HKEY_CURRENT_CONFIG</strong></p>
+
+    <p>실행 시간에 수집한 자료를 담고 있다. 이 키에 저장된 정보는 디스크에 영구적으로 저장되지 않고 시동 시간에 생성된다.</p>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/16419202/66094451-fe101000-e5ce-11e9-91cf-c9202ed2a67d.png" alt="image" /></p>
+
+<h3 id="registry-키-열기--닫기">Registry 키 열기 / 닫기</h3>
+
+<pre><code class="language-C++">LONG WINAPI RegOpenKey(
+	__in HKEY hKey;
+    __in_opt LPCTSTR lpSubKey;
+    __out PHKEY phkResult;
+);
+</code></pre>
+
+<ul>
+  <li>
+    <p><strong>hKey</strong> : 열고 싶은 키가 속해 있는 <strong>기본키</strong> 지정한다.</p>
+  </li>
+  <li><strong>lpSubKey</strong> : 기본 키 이하 나머지 경로를 지정한다. 문자열로 지정하되 타입이 LPCTSTR로 선언되어 있으므로 TEXT(““)로 감싸야 한다.</li>
+  <li><strong>phkResult :</strong> 열린 키에 대한 핸들이 여기로 전달된다. <strong>(&amp;hKey)</strong></li>
+</ul>
+
+<p><strong>※ 함수 수행 성공 시 ERROR_SUCCESS 매크로 상수를 반환한다.</strong></p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">LONG</span> <span class="n">WINAPI</span> <span class="n">RegCloseKey</span><span class="p">(</span>
+	<span class="n">__in</span> <span class="n">HKEY</span> <span class="n">hKey</span><span class="p">;</span>
+<span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>phkResult를 닫는 핸들 키이다.</li>
+</ul>
+
+<blockquote>
+  <p>사용법</p>
+</blockquote>
+
+<pre><code class="language-C++">HKEY hKey;
+RegOpenKey(HKEY_LOCAL_MACHINE, TEXT("Software"), &amp;hKey);
+RegCloseKey(hKey);
+</code></pre>
+
+<h2 id="references"><strong>References</strong></h2>
+
+<ol>
+  <li>
+    <p>http://blog.naver.com/PostView.nhn?blogId=fablezzg&amp;logNo=10031033283&amp;redirect=Dlog&amp;widgetTypeCall=true</p>
+  </li>
+  <li>
+    <p>레지스트리 읽기 / 쓰기 : http://zbaekhk.blogspot.com/2011/06/mfc_16.html</p>
+  </li>
+  <li>레지스트리 서브트리 구성별 : https://m.blog.naver.com/PostView.nhn?blogId=rbdi3222&amp;logNo=220597850076&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F</li>
+  <li>레지스트리 위키 : <a href="https://ko.wikipedia.org/wiki/윈도우_레지스트리">https://ko.wikipedia.org/wiki/%EC%9C%88%EB%8F%84%EC%9A%B0_%EB%A0%88%EC%A7%80%EC%8A%A4%ED%8A%B8%EB%A6%AC</a></li>
+</ol>
+:ET

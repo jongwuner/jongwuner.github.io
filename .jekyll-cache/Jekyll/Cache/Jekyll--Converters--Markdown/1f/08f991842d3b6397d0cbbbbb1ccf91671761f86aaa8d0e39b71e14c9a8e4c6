@@ -1,0 +1,9 @@
+I"�<h2 id="references">References</h2>
+
+<ol>
+  <li>WMI란 ? https://m.blog.naver.com/PostView.nhn?blogId=hardberry&amp;logNo=220780766161&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F</li>
+  <li>PrintJob : https://blogs.msdn.microsoft.com/ocleon/2008/03/26/get-print-jobs-using-wmi-and-managmentobjects/</li>
+  <li>Deviare을 아예 포기해야할 수도 있다. https://stackoverflow.com/questions/39303965/how-to-pause-the-win32-printjob-by-printername-and-jobid/39411341#39411341</li>
+</ol>
+
+:ET

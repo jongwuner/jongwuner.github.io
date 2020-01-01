@@ -1,0 +1,66 @@
+I"�<p>The overall process of hooking is as follows.</p>
+
+<ul>
+  <li>Identify program structure and operation principle using disassembler / debugger</li>
+  <li>Develop hook code necessary to fix bugs or improve function.</li>
+  <li>Install hook code by freely manipulating executable file and process memory.</li>
+</ul>
+
+<p>These series of tasks are the core of reverse engineering technology.
+So hooking is called “the flower of reversing”.</p>
+
+<p>There are various hooking techniques, but API hooking is called API Hooking,
+This is the most widely used technique with message hooking in User mode hooking.</p>
+
+<p><code class="highlighter-rouge">User mode, kernal mode</code></p>
+
+<p><br /></p>
+
+<h1 id="application-programming-interface-api">Application Programming Interface (API)</h1>
+
+<p>In Window OS, when a user application wants to use <strong>system resources</strong> (memory, file, network, video, sound, etc.)
+There is no way you can do it yourself. Because they are directly managed by the OS, and for various reasons (stability, security, efficiency, etc.)
+This prevents direct access from the user application.</p>
+
+<p>In this case, your application should request the system kernel. That’s how you request it.
+It uses the Win32 API provided by Microsoft. (The API is provided by the OS manufacturer.)</p>
+
+<p>In other words, you can not create a meaningful program without an API function.</p>
+
+<p><img src="https://github.com/jongwuner/Etc/blob/master/Hooking/img/API_Function.PNG" alt="API Function Call" /></p>
+
+<p>Many system libraries (DLLs) are loaded to run the actual application code. By default, all processes
+<code class="highlighter-rouge">kernel32.dll</code> is loaded, and <code class="highlighter-rouge">kernel32.dll</code> is loaded <code class="highlighter-rouge">ntdll.dll</code>. (<code class="highlighter-rouge">User32.dll</code> and <code class="highlighter-rouge">gdi32.dll</code> are required for GUI applications.)</p>
+
+<p>The role of <code class="highlighter-rouge">ntdll.dll</code> is to prompt kernel mode for access to system resources that occur in user mode application code.</p>
+
+<p>For a simple example,
+I want to open the file <code class="highlighter-rouge">c: \ abc.txt</code> in notepad.exe.
+The code calls the msvcrt! Fopen () API. The API call flow after that is as follows.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>msvcrt! fopen ()
+  kkernel32! CreateFileW ()
+     ntdll! ZwCreateFile ()
+        ntdll! KiFastSystemCall ()
+            SYSENTER // Intel IA-32 Op Code
+                =&gt; Enter kernel mode
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The APIs that use common system resources are going to run <code class="highlighter-rouge">kernel32.dll</code> and <code class="highlighter-rouge">ntdll.dll</code> and eventually get the <code class="highlighter-rouge">SYSENTER</code> command to enter kernel mode.</p>
+
+<ul>
+  <li>The term <code class="highlighter-rouge">DLL mapping</code> is more accurate than <code class="highlighter-rouge">DLL loading</code>.
+The Windows operating system uses a mechanism that loads DLLs into memory only once and then maps them to processes.</li>
+</ul>
+
+<p><em>copyrights</em> : https://reversecore.com/54</p>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1566071355624.png" alt="1566071355624" /></p>
+
+:ET

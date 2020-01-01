@@ -1,0 +1,56 @@
+I"�<h2 id="주로-등장하는-자료형"><strong>주로 등장하는 자료형</strong></h2>
+
+<ul>
+  <li>
+    <p>HKEY</p>
+  </li>
+  <li>
+    <p>TCHAR</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>#include &lt;tchar.h&gt;
+#define _UNICODE    // ==&gt; TCHAR를 wchar_t 형으로 대치
+#define _MBCS       // ==&gt; TCHAR를 char 형으로 대치 (default)
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <p>자신의 운영체제가 multi-byte환경이면, char형으로,
+unicode환경이면, w_char, wide char형으로 type casting됩니다.</p>
+  </li>
+  <li>
+    <p>LPTSTR</p>
+
+    <ul>
+      <li>LP: Long Pointer</li>
+      <li>C : Const 상수</li>
+      <li>STR : 문자열. 뒤에 ‘‘\0’</li>
+      <li>TSTR : t_char</li>
+      <li>W : wide ==&gt; w_char</li>
+    </ul>
+  </li>
+  <li>
+    <p>DWORD</p>
+  </li>
+  <li>
+    <p>__T, L””</p>
+  </li>
+  <li>
+    <p>유니코드 vs 멀티코드</p>
+  </li>
+  <li>
+    <p><strong>LPBYTE :</strong></p>
+  </li>
+</ul>
+
+<h2 id="references"><strong>References</strong></h2>
+
+<ul>
+  <li>
+    <p>https://m.blog.naver.com/PostView.nhn?blogId=feelwoo&amp;logNo=100036706623&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F</p>
+  </li>
+  <li>
+    <p>자료형에 대한 깔끔한 정리 : http://pelican7.egloos.com/v/1768951</p>
+  </li>
+</ul>
+:ET

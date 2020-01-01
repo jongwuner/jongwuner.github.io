@@ -1,0 +1,56 @@
+I"�
+<h2 id="외부함수-내부함수란"><strong>외부함수, 내부함수란?</strong></h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">outter</span><span class="p">(){</span>
+	<span class="kd">function</span> <span class="nx">inner</span><span class="p">(){</span>
+        <span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">codding everybody</span><span class="dl">'</span><span class="p">;</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">inner</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<blockquote>
+  <p>outter라는 함수 안에 inner라는 변수(함수)를 정의하고 호출한 것.</p>
+</blockquote>
+
+<p><strong>outter :</strong> 외부함수</p>
+
+<p><strong>inner :</strong> 내부함수</p>
+
+<h3 id="예제"><strong>예제</strong></h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">factory_movie</span><span class="p">(</span><span class="nx">title</span><span class="p">){</span>
+	<span class="k">return</span> <span class="p">{</span>
+		<span class="na">get_title</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+			<span class="k">return</span> <span class="nx">title</span><span class="p">;</span>
+		<span class="p">},</span>
+		<span class="na">set_title</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+			<span class="nx">title</span> <span class="o">=</span> <span class="nx">_title</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">ghost</span> <span class="o">=</span> <span class="nx">factory_movie</span><span class="p">(</span><span class="dl">'</span><span class="s1">Ghost in the shell</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">matrix</span> <span class="o">=</span> <span class="nx">factory_movie</span><span class="p">(</span><span class="dl">'</span><span class="s1">Matrix</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

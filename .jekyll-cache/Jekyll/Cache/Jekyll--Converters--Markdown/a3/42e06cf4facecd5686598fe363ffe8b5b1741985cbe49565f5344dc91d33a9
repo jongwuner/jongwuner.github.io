@@ -1,0 +1,89 @@
+I"�	<p><img src="https://user-images.githubusercontent.com/16419202/62863185-0e300f80-bd43-11e9-8657-f61b073a18c6.PNG" alt="" /> {:.aligncenter}</p>
+
+<p><img src="https://user-images.githubusercontent.com/16419202/62863187-0ec8a600-bd43-11e9-9953-ea4ad685b4c4.PNG" alt="" /> {:.aligncenter}</p>
+
+<center> 
+    [BOJ-17143-낚시왕](https://www.acmicpc.net/problem/17143) 
+</center>
+
+<h2 id="points--"><strong>Points : ★☆☆</strong></h2>
+
+<ul>
+  <li><code class="highlighter-rouge">시간복잡도</code> 계산을 해낼 수 있는지. <code class="highlighter-rouge">(while문)</code></li>
+  <li>인접리스트 처럼 받아내려고 했는지, 희소행렬처럼 풀어내려고 했는지.</li>
+  <li>엄청 중요한 시뮬레이션</li>
+</ul>
+
+<h2 id="source-"><strong>Source :</strong></h2>
+
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+struct shark {
+	int speed, dir, siz;
+};
+int R, C, M, ans;
+shark a[105][105];
+const int dx[] = { -1, 1, 0, 0 }, dy[] = { 0, 0, 1, -1 };
+
+void solve() {
+	for (int t = 0; t &lt; C; t++) {
+		shark b[105][105] = { 0 };
+		// Fishing a shark
+		for (int i = 0; i &lt; R; i++) {
+			if (a[i][t].siz) {
+				ans += a[i][t].siz;
+				a[i][t] = { 0, 0, 0 };
+				break;
+			}
+		}
+		// Shark move
+		for (int i = 0; i &lt; R; i++) {
+			for (int j = 0; j &lt; C; j++) {
+				if (a[i][j].siz) {
+					if (a[i][j].dir &lt; 2) { // UP, DOWN
+						int s = a[i][j].speed % ((R - 1) * 2);
+						int d = a[i][j].dir;
+						int ni = i;
+						while (s--) {
+							if (ni == 0 &amp;&amp; d == 0) d = 1;
+							if (ni == R - 1 &amp;&amp; d == 1) d = 0;
+							ni += dx[d];
+						}
+						if (a[i][j].siz &gt; b[ni][j].siz)
+							b[ni][j] = { a[i][j].speed, d, a[i][j].siz };
+					}
+					else { // RIGHT, LEFT
+						int s = a[i][j].speed % ((C - 1) * 2);
+						int d = a[i][j].dir;
+						int nj = j;
+						while (s--) {
+							if (nj == 0 &amp;&amp; d == 3) d = 2;
+							if (nj == C - 1 &amp;&amp; d == 2) d = 3;
+							nj += dy[d];
+
+						}
+						if (a[i][j].siz &gt; b[i][nj].siz)
+							b[i][nj] = { a[i][j].speed, d, a[i][j].siz };
+					}
+					a[i][j] = { 0, 0, 0 };
+				}
+			}
+		}
+		memcpy(a, b, sizeof(b));
+	}
+}
+int main() {
+	scanf("%d%d%d", &amp;R, &amp;C, &amp;M);
+	for (int i = 0; i &lt; M; i++) {
+		int x, y, s, d, z;
+		scanf("%d%d%d%d%d", &amp;x, &amp;y, &amp;s, &amp;d, &amp;z);
+		a[x - 1][y - 1] = { s, d - 1, z };
+	}
+	solve();
+	printf("%d\n", ans);
+	return 0;
+}
+</code></pre>
+
+:ET

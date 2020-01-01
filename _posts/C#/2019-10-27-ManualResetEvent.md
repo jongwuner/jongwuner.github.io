@@ -12,6 +12,10 @@ ManualResetEvent의 **WaitOne()**  =  신호의 상태를 확인합니다.
 
 
 
+## AutoResetEvent
+
+
+
 
 
 ## Ex1
