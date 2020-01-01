@@ -1,0 +1,68 @@
+I"�<p>[TOC]</p>
+
+<p>[TOC]</p>
+
+<h2 id="introduction"><strong>Introduction</strong></h2>
+
+<p>Printing 아키텍쳐는 윈도우즈 아키텍처에서 가장 중요한 컴포넌트 중 하나이다. 프린터 스풀러와 프린트 드라이버들로 구성된다. 어플리케이션은 프린트 작업을 생성할 수 있고 디바이스 독립적인 <code class="highlighter-rouge">Win32 Printing Function</code> &amp; <code class="highlighter-rouge">GDI Function</code>들을 호출함으로써 프린터에 전달할 수 있다. 프린터 드라이버는 사용자가 프린터의 선택적인 옵션들(용지 사이즈, 출력매수, Coloration, pages per sheet 등)을 제어할 수 있는 UI Component들을 포함하고 있다. <br /></p>
+
+<p><br /></p>
+
+<p>Win32 GDI Funciton에 대한 어플리케이션 호출은 GDI 그래픽 엔진으로 전달된다. EMF(Enhanced metafile) 또는 프린터 드라이버와 함께 조합함으로서 그리는 작업을 스풀하거나 또는 스풀러에게 전달할 수 있는 프린트 가능한 이미지를 렌터링 하는. 스풀러 컴포넌트는 EMF 파일을 해석하고 페이지 레이아웃 정보를 삽입할 수 있고 데이터 스트림에 작업 제어 명령을 추가할 수 있다. 스풀러는 프린터의 입출력 포트에 연결된 시리얼, 패러럴, 네트워크 포트 드라이버에 데이터 스트림을 보낸다. 스풀러와 드라이버 컴포넌트는 교체 가능하도록 설계되었다. 새로운 프린터를 지원하기 위해서는 Microsoft 에서 제공하는 프린터 드라이버 중 하나를 사용해서 새로운 데이터 파일을 생성하기만 하면 된다. <br /></p>
+
+<p><br /></p>
+
+<p>대부분의 디바이스 드라이버의 대부분은 커널 모드에서 작동한다. 몇 가지의 디바이스 드라이버 또는 일부만이 사용자 모드와 커널모드에서 작동한다. 프린터 드라이버는 두 가지 모두에서 작동한다.<br /></p>
+
+<p><br /></p>
+
+<h2 id="printing-process"><strong>Printing Process</strong></h2>
+
+<p>인쇄 작업은 세 가지 그룹의 단계로 이루어진다 :</p>
+
+<ul>
+  <li>Client Processes</li>
+  <li>Spooler Processes</li>
+  <li>Printer Processes</li>
+</ul>
+
+<p>각 프로세스는 ㅇ어떠한 작업을 수행하고 나서 다른 프로세스로 인쇄 작업을 전달한다. <br />예를 들어, <br /></p>
+
+<ol>
+  <li>사용자가 어플리케이션에서 인쇄를 누름</li>
+  <li>프로세스는 GDI Function을 호출하면서 인쇄 작업을 생성.</li>
+  <li>스풀러에게 인쇄작업을 전달</li>
+  <li>프린터 프로세서에게 전달</li>
+  <li>프린트언어를 비트맵으로 변환 후 프린트<br /><br /></li>
+</ol>
+
+<h2 id="client-processes"><strong>Client Processes</strong></h2>
+
+<p>사용자는 어플리케이션으로부터 인쇄작업을 전송한다. 어플리케이션은 GDI를 호출한다. 프린트 출력물이 <strong>RAW포멧으로 생성되면 GDI는 사용되지 않는다.</strong> GDI는 GDI가 프린터 언어로 작업을 생성해서 사용한다는 정보를 주기위해 프린터 드라이버를 호출한다. GDI는 작업을 스풀러에게 전달한다.<br /><br /></p>
+
+<h2 id="spooler-processes"><strong>Spooler Processes</strong></h2>
+
+<ol>
+  <li>스풀러(Winspool.drv)의 클라이언트 측은 서버 사이드 스풀러(Spoolsv.exe)에 대한 RPC(원격 프로시저 호출)을 만든다.</li>
+  <li>Spoolsv.exe 는 프린터 라우터를 호출한다.(Spoolss.dll)</li>
+  <li>라우터(Spoolsv.dll)는 인쇄 작업을 Local Print Provide (LPP)로 전송하고 네트워크 프린터로 전달된 작업이면 리모트 프린터 서버로 전송한다.</li>
+  <li>LPP는 인쇄 작업의 데이터 타입을 처리할 수 있는 것 중의 하나를 찾기위해 프린트 프로세서를 폴링한다.(정기적으로 조사)</li>
+  <li>LPP는 적절하게 프린트하는데 필요한 작업을 수정하는 프린터 프로세서에게 작업을 전송한다.</li>
+  <li>프린트 프로세서는 페이지 구분자에게 작업을 전송한다. 필요하면 구분된 페이지가 추가된다.</li>
+  <li>작업은 적절한 포트 프린터 모니터로 전송된다. 프린터가 양방향성이면, 작업은 Printer Job Language(PJL) monitor와 같은 Language Monitor에게 전달되고 port 모니터로 전송된다. 작업이 단방향성이면, 작업은 포트모니터로 직접적으로 전송된다.<br /><br /></li>
+</ol>
+
+<h2 id="printer-processes">Printer Processes</h2>
+
+<ol>
+  <li>프린터는 프린터 스풀러로부터 인쇄작업을 받는다.</li>
+  <li>프린터는 Print Language를 프린트할 비트맵으로 변환한다.</li>
+</ol>
+
+<h2 id="참고">참고</h2>
+
+<ul>
+  <li>EMF :</li>
+  <li>Ref1. : http://www.codeproject.com/useritems/wpa.asp</li>
+</ul>
+:ET

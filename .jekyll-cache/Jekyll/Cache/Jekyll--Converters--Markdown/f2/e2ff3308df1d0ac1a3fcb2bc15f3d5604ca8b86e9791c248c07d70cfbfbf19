@@ -1,0 +1,36 @@
+I"`<p>우선적으로 Mysql(workbench)을 통해 스키마를 생성한 후,</p>
+
+<p>name, age를 column으로 가지고 있는 table을 하나 생성한다.</p>
+
+<p>참고 : <a href="https://jongwuner.github.io/2019/08/07/MySql-Workbench-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9%EB%B2%95/">[MySql]Workbench-설치-및-사용법</a></p>
+
+<p>​</p>
+
+<p>그 이후, C#의 <strong>Winform</strong>을 간략하게 제작하여,</p>
+
+<p><strong>MySql</strong>과 연동해본다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/16419202/62713640-08cb8000-ba38-11e9-82f6-0342edd2f5cf.PNG" alt="photo1" /></p>
+
+<h4 id="mysqlconnect라는-이름의-winform-프로젝트를--생성한다">‘MySqlConnect’라는 이름의 Winform 프로젝트를  생성한다.</h4>
+
+<p>​</p>
+
+<p>​</p>
+
+<p><img src="https://user-images.githubusercontent.com/16419202/62713641-09641680-ba38-11e9-8555-f392b104268c.PNG" alt="photo2" /></p>
+
+<h4 id="아이디-비밀번호-label을-한개씩-만들고-로그인-버튼을-생성한다">'’아이디, 비밀번호’ label을 한개씩 만들고, ‘로그인’ 버튼을 생성한다.</h4>
+
+<hr />
+
+<p>*MetroFrameWork</p>
+
+<p>*using Dapper</p>
+
+<hr />
+
+<p><em>Ref. 1</em>  : 윈폼 기본동작 강좌 (https://udpark.tistory.com/49)</p>
+
+<p><em>Ref. 2</em> :  로그인폼과 DB Connect (https://marine1188.tistory.com/77)</p>
+:ET

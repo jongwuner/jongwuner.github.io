@@ -1,0 +1,215 @@
+I"�6<h2 id="rest-api란">Rest API란?</h2>
+
+<h2 id="json-처리법">JSON 처리법</h2>
+
+<ul>
+  <li>jsonlint</li>
+</ul>
+
+<h2 id="proxy란">Proxy란?</h2>
+
+<h2 id="state-vs-probs">State vs probs</h2>
+
+<p>state는 변경가능<br /></p>
+
+<p>probs는 일정</p>
+
+<h3 id="예제"><strong>예제</strong></h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">Component</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">logo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./logo.svg</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Customer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/Customer</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Paper</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@material-ui/core/Paper</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Table</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@material-ui/core/Table</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">TableHead</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@material-ui/core/TableHead</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">TableBody</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@material-ui/core/TableBody</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">TableRow</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@material-ui/core/TableRow</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">TableCell</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@material-ui/core/TableCell</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">withStyles</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@material-ui/core/styles</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">theme</span> <span class="o">=&gt;</span> <span class="p">({</span>
+  <span class="na">root</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">width</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">100%</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">marginTop</span> <span class="p">:</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">spacing</span><span class="p">.</span><span class="nx">unit</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="na">overflowX</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">auto</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="na">table</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">minWidth</span><span class="p">:</span> <span class="mi">1080</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+
+
+<span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span><span class="p">{</span>
+
+  <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">customers</span><span class="p">:</span> <span class="dl">""</span>
+  <span class="p">}</span>
+
+<span class="nx">componentDidMount</span><span class="p">(){</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">callApi</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">customers</span><span class="p">:</span> <span class="nx">res</span><span class="p">}))</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="nx">callApi</span> <span class="o">=</span> <span class="k">async</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/customers</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">body</span><span class="p">;</span>
+<span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">classes</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">Paper</span> <span class="nx">className</span> <span class="o">=</span> <span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Table</span> <span class="nx">className</span> <span class="o">=</span> <span class="p">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">table</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">TableHead</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">TableCell</span><span class="o">&gt;</span><span class="err">번호</span><span class="o">&lt;</span><span class="sr">/TableCell</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">TableCell</span><span class="o">&gt;</span><span class="err">이미지</span><span class="o">&lt;</span><span class="sr">/TableCell</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">TableCell</span><span class="o">&gt;</span><span class="err">이름</span><span class="o">&lt;</span><span class="sr">/TableCell</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">TableCell</span><span class="o">&gt;</span><span class="err">생일</span><span class="o">&lt;</span><span class="sr">/TableCell</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">TableCell</span><span class="o">&gt;</span><span class="err">성별</span><span class="o">&lt;</span><span class="sr">/TableCell</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">TableCell</span><span class="o">&gt;</span><span class="err">직업</span><span class="o">&lt;</span><span class="sr">/TableCell</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="sr">/TableHead</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">TableBody</span><span class="o">&gt;</span>
+              <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">customers</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">customers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">c</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="k">return</span><span class="p">(</span>
+                <span class="o">&lt;</span><span class="nx">Customer</span>
+                  <span class="nx">id</span><span class="o">=</span><span class="p">{</span><span class="nx">c</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+                  <span class="nx">image</span><span class="o">=</span><span class="p">{</span><span class="nx">c</span><span class="p">.</span><span class="nx">image</span><span class="p">}</span>
+                  <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="nx">c</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+                  <span class="nx">birthday</span><span class="o">=</span><span class="p">{</span><span class="nx">c</span><span class="p">.</span><span class="nx">birthday</span><span class="p">}</span>
+                  <span class="nx">gender</span><span class="o">=</span><span class="p">{</span><span class="nx">c</span><span class="p">.</span><span class="nx">gender</span><span class="p">}</span>
+                  <span class="nx">job</span><span class="o">=</span><span class="p">{</span><span class="nx">c</span><span class="p">.</span><span class="nx">job</span><span class="p">}</span>
+                <span class="sr">/</span><span class="err">&gt;
+</span>              <span class="p">);</span>
+            <span class="p">})</span> <span class="p">:</span> <span class="dl">""</span><span class="p">}</span>
+          <span class="o">&lt;</span><span class="sr">/TableBody</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/Table</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/Paper</span><span class="err">&gt;
+</span>      <span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">withStyles</span><span class="p">(</span><span class="nx">styles</span><span class="p">)(</span><span class="nx">App</span><span class="p">);</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nx">componentDidMount</span><span class="p">(){</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">callApi</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">customers</span><span class="p">:</span> <span class="nx">res</span><span class="p">}))</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">callApi</span> <span class="o">=</span> <span class="k">async</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/customers</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">body</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>8강 13분21초</li>
+</ul>
+
+<h2 id="references">References<em>**</em></h2>
+
+<ol>
+  <li><strong>Material-ui</strong> : https://material-ui.com/demos/tables/</li>
+  <li>동빈나 Youtube : https://www.youtube.com/watch?v=YO9CqrnxbFU&amp;list=PLRx0vPvlEmdD1pSqKZiTihy5rplxecNpz&amp;index=6</li>
+</ol>
+:ET

@@ -1,0 +1,88 @@
+I"�<p>[TOC]</p>
+
+<h2 id="이벤트event란-"><strong>이벤트(Event)란 ?</strong></h2>
+
+<p>델리게이트 타입을 선언하면 델리게이트 변수도 생성할 수 있지만, 이벤트 변수도 생성할 수 있다. 이벤트 변수는 간단히 event 한정자만 붙여주면 된다.<br /></p>
+
+<p><br /></p>
+
+<pre><code class="language-C#">// 델리게이트 타입 선언
+delegate void MyDelegate( int a );
+
+// 델리게이트 변수 선언
+MyDelegate A;
+
+// 이벤트 변수 선언
+event MyDelegate B;
+</code></pre>
+
+<p><br /></p>
+
+<p>이벤트 변수는 델리게이트 변수와 마찬가지로 메소드를 참조하지만, 성격이 약간 다르다.</p>
+
+<p>간단히 말해 델리게이트 변수가 public 이라면 이벤트 변수는 private 같은 느낌이다.</p>
+
+<p>델리게이트 변수는 자신이 속한 클래스 외부에서도 호출이 가능하지만,</p>
+
+<p>이벤트 변수는 외부에서 호출이 불가능하다.</p>
+
+<h2 id="이벤트-코드-예제"><strong>이벤트 코드 예제</strong></h2>
+
+<pre><code class="language-C#">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    delegate void MyDelegate(int a);
+
+    class EventManager
+    {
+        public event MyDelegate eventCall;
+        public void NumberCheck(int num)
+        {
+            if(num % 2 == 0)
+            {
+                if (num % 2 == 0)
+                    eventCall(num);
+            }
+        }
+    }
+
+    class Program
+    {
+        static void EvenNumber(int num)
+        {
+            Console.WriteLine("{0}은 짝수", num);
+        }
+
+        static void Main(string[] args)
+        {
+            EventManager eventManager = new EventManager();
+            eventManager.eventCall += new MyDelegate(EvenNumber);
+
+            for (int i = 1; i &lt; 10; i++)
+                eventManager.NumberCheck(i);
+        }
+    }
+}
+
+Result : 
+2은 짝수
+4은 짝수
+6은 짝수
+8은 짝수
+</code></pre>
+
+<ul>
+  <li>이벤트 변수는 메소드를 참조할 때, += 로만 참조하도록 할 수 있다.</li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>Event 코드로 짜놓은 : http://aloloever.blogspot.com/2015/01/c-event.html</li>
+</ul>
+:ET

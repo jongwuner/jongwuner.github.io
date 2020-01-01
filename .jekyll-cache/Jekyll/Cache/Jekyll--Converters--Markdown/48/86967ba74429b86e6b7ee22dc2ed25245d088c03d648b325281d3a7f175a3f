@@ -1,0 +1,27 @@
+I"o<h2 id="예제">예제</h2>
+
+<blockquote>
+  <p>동등연산자</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>					<span class="c1">//false</span>
+<span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>					<span class="c1">//true</span>
+<span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">)</span>		<span class="c1">//false</span>
+<span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">)</span>		<span class="c1">//true</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<blockquote>
+  <p>일치연산자</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="o">==</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">);</span>				<span class="c1">//true</span>
+<span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="o">===</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">);</span>				<span class="c1">//false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

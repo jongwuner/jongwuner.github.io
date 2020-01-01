@@ -1,0 +1,45 @@
+I"<p>적대적 예제를 통해 전혀 다른 결과를 낳게 되게끔 야기</p>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567913252864.png" alt="1567913252864" /></p>
+
+<h2 id="deep-neural-networkdnn">Deep Neural Network(DNN)</h2>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567913235636.png" alt="1567913235636" /></p>
+
+<p>손상된 표지판도 올바르게 인식할 수 있음.</p>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567913380615.png" alt="1567913380615" /></p>
+
+<p>x -&gt; Input Latyer에 들어갈 때 : 64 x 64 x 3 의 크기를 일렬로 나열한 배열에다가 삽입함.</p>
+
+<p>Hidden Layer : 해당 이미지에 대한 Feature을 추출한다.</p>
+
+<p>Output Layer : 사용자가 얻고자 하는 데이터를 얻을 수 있음.</p>
+
+<p>어느정도의 확률로 Panda라고 판단하는지 확률을 다루게 됨</p>
+
+<h3 id="cost-function경사-하강법">Cost Function(경사 하강법)</h3>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567913661607.png" alt="1567913661607" /></p>
+
+<ul>
+  <li>y 로 드는 비용 x</li>
+  <li>입력으로 들어오는 x</li>
+</ul>
+
+<h3 id="problem-description">Problem Description</h3>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567913990998.png" alt="1567913990998" /></p>
+
+<p>인간에게는 큰 변형이 안일어났지만, 컴퓨터의 입장에서는 큰 변화!</p>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567914172292.png" alt="1567914172292" /></p>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1567914435505.png" alt="1567914435505" /></p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>https://www.youtube.com/watch?v=TfDO2guk0ug</li>
+</ul>
+:ET

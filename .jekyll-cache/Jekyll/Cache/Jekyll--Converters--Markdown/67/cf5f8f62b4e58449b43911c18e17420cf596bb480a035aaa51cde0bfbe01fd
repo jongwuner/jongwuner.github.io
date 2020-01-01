@@ -1,0 +1,39 @@
+I"�<p>[TOC]</p>
+
+<h2 id="delegate와-익명메소드">Delegate와 익명메소드</h2>
+
+<ul>
+  <li>익명 메소드란 이름이 없는 메소드이다.</li>
+  <li>한 번 사용하고 다시 사용할 일이 없을 것 같으면 익명메소드로 사용하는 것이 낫다.</li>
+</ul>
+
+<blockquote>
+  <p>Delegate 선언</p>
+</blockquote>
+
+<pre><code class="language-C#">delegate int Calculate(int a, int b);
+</code></pre>
+
+<blockquote>
+  <p>메인</p>
+</blockquote>
+
+<pre><code class="language-C#">static void Main()
+{
+	Calculate calc1, calc2;
+    calc1 = delegate(int x, int y){return x + y;};
+    calc2 = (x, y) =&gt; {return x - y};
+    
+    Console.WriteLine(calc1(5, 6));
+    console.WriteLine(calc2(5, 6));
+}
+</code></pre>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li>Invoke : https://docs.microsoft.com/ko-kr/dotnet/api/system.windows.forms.control.invoke?view=netframework-4.8</li>
+  <li>MethodInvoker : http://www.masque.kr/free/383086</li>
+</ol>
+
+:ET

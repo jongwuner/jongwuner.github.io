@@ -1,0 +1,50 @@
+I"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>DWORD WINAPI WaitForSingleObject(
+  _In_ HANDLE hHandle,
+  _In_ DWORD  dwMilliseconds
+);
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<p>커널 오브젝트의 상태정보를 확인하는데 사용됩니다.<br /></p>
+
+<p><br /></p>
+
+<p><strong>hHandle</strong><br /></p>
+
+<p>상태확인을 원하는 커널오브젝트의 핸들을 인자로 전달합니다.<br /></p>
+
+<p><br /></p>
+
+<p><strong>dwMilliseconds</strong><br /></p>
+
+<p>커널오브젝트가 Singaled상태가 될때까지 기다릴 수 있는 최대 시간입니다.<br /></p>
+
+<p>만약 상수 INFINITE를 인자로 전달하면 커널 오브젝트가 Signaled 상태가 될 때까지<br /></p>
+
+<p>반환하지 않고 무한정 기다립니다.<br /></p>
+
+<p><br /><br /></p>
+
+<p><strong>반환값</strong><br /></p>
+
+<ul>
+  <li>
+    <p><em>WAIT_OBJECT_0</em>  -  커널 오브젝트가 Signaled 상태가 되었을 때 반환되는 값<br /></p>
+  </li>
+  <li>
+    <p><em>WAIT_TIMEOUT</em>  -   커널 오브젝트가 Signaled 상태가 되지 않고, dwMilliseconds 로 설정한 시간이 넘음<br /></p>
+  </li>
+  <li>
+    <p><em>WAIT_ABANDONED</em> - 소유관계와 관련하여 함수가 정상적이지 못한 오류 발생에 의해서 반환되는경우.<br /></p>
+  </li>
+</ul>
+
+<p>https://cinrueom.tistory.com/66</p>
+
+:ET

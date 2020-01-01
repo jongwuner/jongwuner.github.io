@@ -1,0 +1,49 @@
+I"�<h2 id="다양한-정의방법"><strong>다양한 정의방법</strong></h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">member</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">egoing</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">k8805</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sorialgi</span><span class="dl">'</span><span class="p">];</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">member</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">member</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">member</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="함수-배열형-반환이-가능"><strong>함수! 배열형 반환이 가능</strong></h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">get_members</span><span class="p">(){</span>
+	<span class="k">return</span> <span class="p">[</span><span class="dl">'</span><span class="s1">abcd</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">efgh</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">qwer</span><span class="dl">'</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="o">=</span> <span class="nx">members</span> <span class="o">=</span> <span class="nx">get_members</span><span class="p">();</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">members</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">members</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">members</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="push-pop"><strong>push, pop</strong></h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">d</span><span class="dl">'</span><span class="p">];</span>
+<span class="nx">li</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">f</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+
+<span class="nl">result</span> <span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">f</span><span class="dl">"</span><span class="p">];</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="제거-정렬"><strong>제거, 정렬</strong></h2>
+
+:ET

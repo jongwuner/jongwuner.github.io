@@ -1,0 +1,73 @@
+I"�<p>정의와 호출을 <code class="highlighter-rouge">&lt;script&gt;</code><code class="highlighter-rouge">&lt;/script&gt;</code>내부에서 가능하다!</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="p">...</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>    
+    <span class="kd">function</span> <span class="nx">numbering</span><span class="p">(){</span>
+        <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">){</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+            <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">numbering</span><span class="p">();</span>
+	<span class="nx">numbering</span><span class="p">();</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="p">...</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="다양한-정의방법"><strong>다양한 정의방법</strong></h2>
+
+<blockquote>
+  <p>기본적인 함수 정의</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">a</span><span class="p">(){</span>
+	<span class="k">return</span> <span class="dl">'</span><span class="s1">abcd</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">...</span>
+<span class="nx">a</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<blockquote>
+  <p>변수에 함수 넣기</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">numbering</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">arg</span><span class="p">){</span>
+	<span class="nx">retrun</span> <span class="nx">arg</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<blockquote>
+  <p>익명함수</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">arg</span><span class="p">){</span>
+	<span class="k">return</span> <span class="nx">arg</span><span class="p">;</span>
+<span class="p">})()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

@@ -1,0 +1,104 @@
+I"�<p><img src="https://github.com/jongwuner/Etc/blob/master/Hooking/img/Hooking%20TecMap.PNG" alt="tecmap" /></p>
+
+<h1 id="classification-for-api-hooking-methods">Classification for API hooking methods.</h1>
+
+<p>The API hooking method divides into <code class="highlighter-rouge">a static method</code> and <code class="highlighter-rouge">a dynamic method</code> largely depending on an object to be worked on.</p>
+
+<p><strong>The static method</strong> is based on the assumption that the object to be processed.
+<strong>The dynamic method</strong> is to work with ‘memory’.</p>
+
+<p>Common API hooking is dynamic.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>dynamic</th>
+      <th>static</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Destination</td>
+      <td>File</td>
+      <td>Memory</td>
+    </tr>
+    <tr>
+      <td>Hooking time</td>
+      <td>Before running the program</td>
+      <td>After running the program</td>
+    </tr>
+    <tr>
+      <td>When to Use</td>
+      <td>Special Situations</td>
+      <td>General Hooking</td>
+    </tr>
+    <tr>
+      <td>Terminate the program</td>
+      <td>terminate for unhook</td>
+      <td>unhook during program execution</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /><br /></p>
+
+<h1 id="location">Location</h1>
+
+<p>How to change the API address in the ‘IAT’ to the hooking function address.
+The advantages are simple, and the easiest to implement.
+The disadvantage is that it is not in the ‘IAT’ but you can not hook the APIs used in the program.<br />
+(Eg APIs that dynamically load and use DLLs)</p>
+
+<h2 id="code">Code</h2>
+
+<p>It is a method of searching the actual address of the API in the system library (* .dll) mapped to the process memory and directly modifying the code.
+Note that this is the most widely used method, and there are a variety of options for implementation:</p>
+
+<blockquote>
+  <blockquote>
+    <p>How to patch the first 5 bytes with the JMP XXXXXXX command<br />
+How to overwrite part of a function<br />
+How to make some changes to just the parts you need<br /></p>
+  </blockquote>
+</blockquote>
+
+<h2 id="eat">EAT</h2>
+
+<p>It is a method to change the start address of the API recorded in the EAT (Export Address Table) of the DLL to the hooking function address. The concept is simple, but the <strong>2)</strong>method in the code implementation is simpler and more powerful, so the EAT modification method is not used well.</p>
+
+<p><br /><br /></p>
+
+<h1 id="technique-how">Technique (How)</h1>
+
+<p>This is a concrete technique for penetrating memory and installing hooking functions.
+Debug and Injection methods are divided into two parts. Injection method is divided into Code and Dll methods.</p>
+
+<h2 id="debug">Debug</h2>
+
+<p>How to hook API while debugging the target process.
+Since Debugger has full control over Debuggee (Execution Control, Memory Access, etc.), Debugger’s process memory
+Hooking functions can be freely installed.</p>
+
+<p>The Debugger is not a typical <code class="highlighter-rouge">OllyDbg, Windbg, or IDAPro</code>, but is a user-created program for hooking.
+That is, it attaches to the target process using the Debug API in the program, and installs the hooking function (the execution stops temporarily). After that,
+Resuming execution will result in complete API Hooking.</p>
+
+<p>There is, of course, a way to automate API hooking by using automation scripts in existing debuggers (OllyDbg, Windbg, and IDAPro). Especially Immunity Debugger
+In the same case, it supports powerful dedicated Python scripts.</p>
+
+<h2 id="injection">Injection</h2>
+
+<p>Injection technique is a technology that penetrates the corresponding process memory area. 1) Code injection
+2) It can be divided into DLL Injection. Among them, the DLL Injection technique is most widely used.</p>
+
+<ul>
+  <li>DLL Injection is a technique that forces the target process to load the DLL file that the user wants.
+If hooking code and installation code are created in advance in DLL to be injected and installation code is called from DllMain (), API hooking is completed at the moment of injection.</li>
+  <li>Code Injection technique is a more advanced (complex) technology than existing DLL Injection, mainly used in malicious code (virus, shellcode, etc).
+(DLL Injection is a good detection of AV products, malicious code is more difficult to detect more Code Injection is trying.)</li>
+</ul>
+
+<p>The Code Injection technique is very difficult to implement. The reason for this is not the complete PE image like DLL Injection, but only executable code and data
+Injection requires that you obtain and use the necessary API address yourself, and be very careful not to access the wrong address when accessing the memory address in the code.</p>
+:ET

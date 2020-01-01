@@ -1,0 +1,113 @@
+I"�%<h2 id="객체object를-생성하는-방법"><strong>객체(Object)를 생성하는 방법</strong></h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">grades</span> <span class="o">=</span> <span class="p">{</span><span class="dl">'</span><span class="s1">egoing</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="dl">'</span><span class="s1">k8805</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sorialgi</span><span class="dl">'</span><span class="p">:</span> <span class="mi">80</span><span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<blockquote>
+  <p>&gt; grades</p>
+
+  <p>&gt; Object {egoing: 10, k8805: 6, sorialgi: 80}</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">grades</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">grades</span><span class="p">[</span><span class="dl">'</span><span class="s1">egoing</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">grades</span><span class="p">[</span><span class="dl">'</span><span class="s1">k8805</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="nx">grades</span><span class="p">[</span><span class="dl">'</span><span class="s1">sorialgi</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">grades</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">;</span>
+<span class="nx">grades</span><span class="p">[</span><span class="dl">'</span><span class="s1">egoing</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">grades</span><span class="p">[</span><span class="dl">'</span><span class="s1">k8805</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="nx">grades</span><span class="p">[</span><span class="dl">'</span><span class="s1">sorialgi</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<blockquote>
+  <p>&gt; grades[‘egoing’]</p>
+
+  <p>&gt; 10</p>
+
+  <p>&gt; grades[‘k8805’]</p>
+
+  <p>&gt; 6</p>
+</blockquote>
+
+<h2 id="반복문과-객체"><strong>반복문과 객체</strong></h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">grades</span> <span class="o">=</span> <span class="p">{</span><span class="dl">'</span><span class="s1">egoing</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="dl">'</span><span class="s1">k8805</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sorialgi</span><span class="dl">'</span><span class="p">:</span> <span class="mi">80</span><span class="p">};</span>
+<span class="k">for</span><span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">grades</span><span class="p">){</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">key : </span><span class="dl">"</span><span class="o">+</span><span class="nx">key</span><span class="o">+</span><span class="dl">"</span><span class="s2"> value : </span><span class="dl">"</span><span class="o">+</span><span class="nx">grades</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span><span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br/&gt;</span><span class="dl">"</span> <span class="p">);</span>
+<span class="p">}</span><span class="o">+</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="객체에-함수를-담을수도-있다"><strong>객체에 함수를 담을수도 있다.</strong></h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">grades</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="dl">'</span><span class="s1">list</span><span class="dl">'</span> <span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">egoing</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="dl">'</span><span class="s1">k8805</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sorialgi</span><span class="dl">'</span> <span class="p">:</span> <span class="mi">80</span><span class="p">}</span> 
+	<span class="dl">'</span><span class="s1">show</span><span class="dl">'</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello world</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">grades</span><span class="p">[</span><span class="dl">'</span><span class="s1">list</span><span class="dl">'</span><span class="p">][</span><span class="dl">'</span><span class="s1">egoing</span><span class="dl">'</span><span class="p">]);</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">grades</span><span class="p">[</span><span class="dl">'</span><span class="s1">show</span><span class="dl">'</span><span class="p">]())</span>
+
+<span class="na">result</span> <span class="p">:</span> 
+<span class="mi">10</span>
+<span class="nx">Hello</span> <span class="nx">world</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<blockquote>
+  <p>객체 안에 함수를 저장할 수도 있다. 이런 식으로 저장이 가능하다.</p>
+</blockquote>
+
+<h2 id="객체지향-프로그래밍"><strong>객체지향 프로그래밍</strong></h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">grades</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="dl">'</span><span class="s1">list</span><span class="dl">'</span> <span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">egoing</span><span class="dl">'</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="dl">'</span><span class="s1">k8805</span><span class="dl">'</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sorialgi</span><span class="dl">'</span><span class="p">:</span><span class="mi">80</span><span class="p">},</span>
+    <span class="dl">'</span><span class="s1">show</span><span class="dl">'</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">name</span> <span class="k">in</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">name</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">grades</span><span class="p">[</span><span class="dl">'</span><span class="s1">show</span><span class="dl">'</span><span class="p">]();</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

@@ -1,0 +1,50 @@
+I"�<p>[TOC]</p>
+
+<h2 id="win32api-프로그래밍-개요"><strong>Win32API 프로그래밍 개요</strong></h2>
+
+<blockquote>
+  <p>윈도우 운영체제가 제공하는 함수를 이용한 C언어 기반의 프로그래밍</p>
+</blockquote>
+
+<p>윈도우 운영체제로부터 모든 정보를 얻는다. (키보드, 마우스, 비디오카드, 프린터, 사운드).<br /></p>
+
+<p><br /></p>
+
+<h2 id="프로그래밍-구조비교"><strong>프로그래밍 구조비교</strong></h2>
+
+<ul>
+  <li><code class="highlighter-rouge">main()</code></li>
+  <li>→ <code class="highlighter-rouge">WinMain()</code> : 응용 프로그램 윈도우 생성.</li>
+  <li>→ <code class="highlighter-rouge">WinProc()</code> : 메세지 처리. <strong>Call-back Function</strong>.<br /><br /><br /></li>
+</ul>
+
+<h4 id="키-입력받는-코드-비교-예제">키 입력받는 코드 비교 예제</h4>
+
+<blockquote>
+  <p>키 입력을 받는 코드 1 (<strong>C언어</strong> 코드)</p>
+</blockquote>
+
+<pre><code class="language-C">while(1){
+    if(_kbhit()){
+        nKey = getch();
+        printf("%c", nKey);
+    }
+}
+</code></pre>
+
+<p><br /><br /></p>
+
+<blockquote>
+  <p>키 입력을 받는 코드 2(<strong>Win32API</strong> 코드)</p>
+</blockquote>
+
+<pre><code class="language-C++">
+</code></pre>
+
+<h2 id="윈도우-데이터형"><strong>윈도우 데이터형</strong></h2>
+
+<h2 id="인스턴스와-핸들"><strong>인스턴스와 핸들</strong></h2>
+
+<h2 id="헝가리언-표기법"><strong>헝가리언 표기법</strong></h2>
+
+:ET

@@ -1,0 +1,48 @@
+I"�<h2 id="description-of-git">Description of git.</h2>
+
+<ul>
+  <li><strong>Watch:</strong> Set alarm when there is a change in storage. <br /></li>
+  <li><strong>Star:</strong> Features like Facebook Like.<br /></li>
+  <li><strong>Fork:</strong> Copying someone’s repository to my repository. <br /></li>
+  <li><strong>Code:</strong> Shows the currently saved code. <br /></li>
+  <li><strong>Issues:</strong> Write the problematic part of your code. <br /></li>
+  <li><strong>Pull Request (PR):</strong> Modifying and uploading the code. I can modify and contribute directly to others’ code.</li>
+</ul>
+
+<h2 id="command">Command</h2>
+
+<ul>
+  <li>
+    <p><strong>clone:</strong><br /></p>
+
+    <p><em>Ex.</em> <code class="highlighter-rouge">git clone [url]</code></p>
+  </li>
+  <li>
+    <p><strong>remote:</strong>   Remote repository refers to the repository on the Internet (the repository in github). It is said to keep the repository in the middle of tracing pull, push, and branches. <br />
+<em>Ex.</em> <code class="highlighter-rouge">git remote</code>, <code class="highlighter-rouge">git remote -v</code>, <code class="highlighter-rouge">git remote add (name of storage) (name of branch)</code><br /><br /></p>
+  </li>
+  <li>
+    <p><strong>push:</strong> <br />
+<em>Ex.</em> <code class="highlighter-rouge">git push -u origin master</code></p>
+  </li>
+  <li>
+    <p><strong>add:</strong><br /></p>
+
+    <p><em>Ex.</em> <code class="highlighter-rouge">git add [파일경로]</code></p>
+  </li>
+  <li>
+    <p><strong>commit:</strong><br /></p>
+
+    <p><em>Ex.</em> <code class="highlighter-rouge">git commit -m "message"</code><br /></p>
+  </li>
+</ul>
+
+<p><br /><br /><br /></p>
+
+<h2 id="reference"><strong>Reference</strong></h2>
+
+<ul>
+  <li><a href="https://medium.com/@joongwon/git-git-명령어-정리-c25b421ecdbd">https://medium.com/@joongwon/git-git-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC-c25b421ecdbd</a></li>
+</ul>
+
+:ET

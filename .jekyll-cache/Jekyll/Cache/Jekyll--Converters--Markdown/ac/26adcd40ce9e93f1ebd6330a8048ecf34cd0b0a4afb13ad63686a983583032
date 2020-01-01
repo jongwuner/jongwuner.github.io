@@ -1,0 +1,265 @@
+I"� <p>[TOC]</p>
+
+<h2 id="tip"><strong>TIP</strong></h2>
+
+<p>delegate 선언한 인자와 반환형을 살펴라.</p>
+
+<h2 id="델리게이트delegate의-역할"><strong>델리게이트(Delegate)의 역할</strong></h2>
+
+<p>C++ 함수 포인터와 비슷해서 C++ 공부를 했다면 어렵지 않은 개념이다.<br /></p>
+
+<p>델리게이트는 메소드를 대신해서 호출하는 역할을 한다. 지금까지는 특정 메소드를 처리할 때, 그 메소드를 직접 호출해서 실행시켜야 했지만, 델리게이트를 사용하면 그 메소드를 대신하여 호출할 수 있다.<br /></p>
+
+<p><br /><br /></p>
+
+<h2 id="델리게이트-선언과-참조"><strong>델리게이트 선언과 참조</strong></h2>
+
+<p>델리게이트로 특정 메소드를 대신 호출하기 위해서는</p>
+
+<ol>
+  <li>
+    <p>메소드와 동일한 타입의 델리게이트 타입을 선언해야 한다.</p>
+
+    <pre><code class="language-C#">// delegate [반환타입] 델리게이트이름(매개변수);
+   delegate void typeA( void ); 	// void funcA(void)
+   delegate void typeB( void ); 	// void funcB(int)
+   delegate float typeC( float ); 	// float funcC(float)
+   delegate string typeD( int );	// string funcD(int)
+</code></pre>
+
+    <p>메소드의 타입은 매개변수와 반환타입에 의해 결정되기 때문에,</p>
+
+    <p>델리게이트 타입도 그 메소드와 동일한 매개변수, 반환타입으로 선언해주면 되겠다.</p>
+  </li>
+  <li>
+    <p>선언한 델리게이트 타입으로 델리게이트 변수를 생성하고, 생성한 델리게이트 변수에 해당 메소드를 참조시킨다.</p>
+
+    <pre><code class="language-C#">// delegate 변수 생성
+typeA delegate0;
+typeB delegate1;
+typeC delegate2;
+typeD delegate3;
+   
+// 메소드 참조
+delegate0 = new typeA( funcA );
+delegate1 = new typeB( funcB );
+delegate2 = new typeC( funcC );
+delegate3 = new typeD( funcD );
+</code></pre>
+
+    <p>여기까지하면 델리게이트 변수로 해당함수를 호출할 수 있게 된다.</p>
+
+    <p>직접 프로그램으로 작성해보면</p>
+
+    <pre><code class="language-C#">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+   
+namespace ConsoleApp7
+{
+    delegate int MyDelegate(int a, int b);
+    class Program
+    {
+        public static int Plus(int a, int b) { return a + b; }
+        public static int Minus(int a, int b) { return a - b; }
+   
+   
+        static void Main(string[] args)
+        {
+            MyDelegate calculate;
+   
+            calculate = new MyDelegate(Plus);
+            int sum = calculate(11, 22);
+            Console.WriteLine("11 + 22 = " + sum);
+   
+            calculate = new MyDelegate(Minus);
+            int minus = calculate(11, 22);
+            Console.WriteLine("11 - 22 = " + minus);
+        }
+    }
+}
+   
+Result:
+11 + 22 = 33
+11 - 22 = -11
+</code></pre>
+  </li>
+</ol>
+
+<h2 id="콜백-메서드call-back-method"><strong>콜백 메서드(Call-Back Method)</strong></h2>
+
+<p>델리게이트의 진정한 가치는 <code class="highlighter-rouge">Call-Back Method</code>를 구현할 때 진정한 가치가 나타난다.</p>
+
+<p>콜백(Callback)이란 A라는 메서드를 호출할 때에 B라는 메서드를 넘겨주어</p>
+
+<p>A 메서드로 하여금 B 메서드를 호출하도록 하는 것을 말하며</p>
+
+<p>이때 <strong>A 메서드</strong>를 <strong>콜백 메서드</strong>라고 한다.</p>
+
+<p><img src="C:\Users\jklh0\AppData\Roaming\Typora\typora-user-images\1566554010928.png" alt="1566554010928" /></p>
+
+<p>다음 예제를 보면,</p>
+
+<pre><code class="language-C#">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    delegate int MyDelegate(int a, int b);
+    class Program
+    {
+        public static void Calculator(int a, int b, MyDelegate func)
+        {
+            Console.WriteLine(func(a, b));
+        }
+
+        public static int Plus(int a, int b) { return a + b; }
+        public static int Minus(int a, int b) { return a - b; }
+        public static int Multiply(int a, int b) { return a * b; }
+        
+        static void Main(string[] args)
+        {
+
+            MyDelegate plus = new MyDelegate(Plus);
+            MyDelegate minus = new MyDelegate(Minus);
+            MyDelegate multiply = new MyDelegate(Multiply);
+
+            Calculator(11, 22, plus);
+            Calculator(11, 22, minus);
+            Calculator(11, 22, multiply);
+        }
+    }
+}
+
+Result : 
+33
+-11
+242
+
+</code></pre>
+
+<h2 id="일반화-델리게이트"><strong>일반화 델리게이트</strong></h2>
+
+<p>int 형 메소드만 가능한 것은 절대 아니다.<br /></p>
+
+<p>어떤 타입이던지 메소드를 참조할 수 있다.<br /></p>
+
+<pre><code class="language-C#">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    delegate T MyDelegate&lt;T&gt; (T a, T b);
+    class Program
+    {
+        public static void Calculator&lt;T&gt;(T a, T b, MyDelegate&lt;T&gt; dele)
+        {
+            Console.WriteLine( dele(a, b));
+        }
+
+        public static int   plus(int a, int b) { return a + b; }
+        public static float plus(float a, float b) { return a + b; }
+        public static double plus(double a, double b) { return a + b; }
+
+        static void Main(string[] args)
+        {
+            MyDelegate&lt;int&gt; Plus_int = new MyDelegate&lt;int&gt;(plus);
+            MyDelegate&lt;float&gt; Plus_float = new MyDelegate&lt;float&gt;(plus);
+            MyDelegate&lt;double&gt; Plus_double = new MyDelegate&lt;double&gt;(plus);
+
+            Calculator(11, 22, Plus_int);
+            Calculator(3.3f, 4.4f, Plus_float);
+            Calculator(5.5, 6.6, Plus_double);
+        }
+    }
+}
+
+</code></pre>
+
+<h2 id="델리게이트-체인delegate-chain"><strong>델리게이트 체인(Delegate-Chain)</strong></h2>
+
+<p>지금까지의 델리게이트는 하나의 델리게이트에 하나의 메소드만 참조하였다.<br /></p>
+
+<p>하지만 델리게이트는 놀랍게도 여러 개의 메소드를 참조할 수 있다.<br /></p>
+
+<p>델리게이트가 여러 개의 메소드를 참조하게 하는 방법은 아주 간단하다.<br /></p>
+
+<p>다음과 같이 +, += 로 새로운 메소드를 추가해주기만 하면 된다.<br /></p>
+
+<pre><code class="language-C#">MyDelegate del;
+del 	=  new MyDelegate( func0 );
+del 	+=  func1;
+del		+=  func2;
+</code></pre>
+
+<p>이제 델리게이트를 호출하면, 참조된 메소드를 차례대로 호출하게 된다.</p>
+
+<p>이렇게 하나의 델리게이트에 여러개의 메소드를 연결시키는 것을 &lt;h3&gt;델리게이트 체인&lt;/h3&gt; 이라고 한다. 그리고 델리게이트에 연결된 메소드를 끊기 원한다면 반대로 -=해주면 된다.</p>
+
+<pre><code class="language-C#">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    delegate void MyDelegate();
+    class Program
+    {
+       
+        public static void func0() { Console.Write("첫번째 "); }
+        public static void func1() { Console.Write("두번째 "); }
+        public static void func2() { Console.Write("세번째 "); }
+
+        static void Main(string[] args)
+        {
+            MyDelegate dele;
+            dele = new MyDelegate(func0);
+            dele += func1;
+            dele += func2;
+
+            dele();
+            Console.WriteLine();
+
+            dele -= func0;
+            dele -= func2;
+
+            dele();
+            Console.WriteLine();
+        }
+    }
+}
+
+Result:
+첫번째 두번째 세번째
+두번째
+</code></pre>
+
+<h2 id="invoke-begininvoke"><strong>Invoke()</strong>, BeginInvoke()</h2>
+
+<ul>
+  <li><strong>Invoke()</strong>는 동기식 쓰레드</li>
+  <li><strong>BeginInvoke()</strong>는 비동기식 쓰레드</li>
+</ul>
+
+<h2 id="methodinvoker"><strong>MethodInvoker()</strong></h2>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li>Invoke : https://docs.microsoft.com/ko-kr/dotnet/api/system.windows.forms.control.invoke?view=netframework-4.8</li>
+  <li>
+    <p>MethodInvoker : http://www.masque.kr/free/383086</p>
+  </li>
+  <li>event 콘솔로 짜놓은 많은 예제들 : http://aloloever.blogspot.com/2015/01/c-event.html</li>
+</ol>
+:ET

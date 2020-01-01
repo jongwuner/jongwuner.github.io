@@ -1,0 +1,36 @@
+I"1<h2 id="component의-구조"><strong>Component의 구조</strong></h2>
+
+<p>1) constructor()</p>
+
+<p>2) componentWillMount()</p>
+
+<ul>
+  <li>컴포넌트가 마운트되기 전에 불러와진다.</li>
+</ul>
+
+<p>3) render()</p>
+
+<ul>
+  <li>컴포넌트를 화면에 그림</li>
+</ul>
+
+<p>4) componentDidMount()</p>
+
+<ul>
+  <li>컴포넌트가 그려진 후</li>
+</ul>
+
+<p>probs or state -&gt; shouuldComponentUpdate()</p>
+
+<ul>
+  <li>상태의 변화를 알아서 감지해서 바꿔주고</li>
+  <li>상태만 잘 관리해주면 됌.</li>
+</ul>
+
+<h2 id="references">References<em>**</em></h2>
+
+<ol>
+  <li><strong>Material-ui</strong> : https://material-ui.com/demos/tables/</li>
+  <li>동빈나 Youtube : https://www.youtube.com/watch?v=YO9CqrnxbFU&amp;list=PLRx0vPvlEmdD1pSqKZiTihy5rplxecNpz&amp;index=6</li>
+</ol>
+:ET

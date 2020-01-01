@@ -1,0 +1,46 @@
+I"�<p><br /></p>
+
+<h4 id="user-mode-hooking">User Mode Hooking<br /></h4>
+
+<ul>
+  <li>IAT Hooking</li>
+  <li>Trampoline Code Hooking</li>
+  <li>EAT Hooking</li>
+</ul>
+
+<blockquote>
+  <p>정리</p>
+</blockquote>
+
+<ol>
+  <li><code class="highlighter-rouge">API Function</code> 의 실행흐름에서 제어권을 가져오는 방법
+    <ul>
+      <li>0xCC, JMP Code, IAT, EAT Patch</li>
+    </ul>
+  </li>
+  <li>제어권을 가져온 후 원하는 동작을 하기 위한 방법
+    <ul>
+      <li>DLL Injection, Debugger Attach</li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h4 id="kernel-mode-hooking">Kernel Mode Hooking<br /></h4>
+
+<ul>
+  <li>SSDT Hooking(System Service Descriptor Table)
+    <ul>
+      <li>Native API 주소를 보관하고 있는 테이블</li>
+    </ul>
+  </li>
+  <li>IDT Hooking (Interrupt Descriptor Table)
+    <ul>
+      <li>인터럽트 핸들러 주소를 보관하고 있는 테이블</li>
+    </ul>
+  </li>
+  <li>IRP Hooking</li>
+</ul>
+
+:ET

@@ -1,0 +1,24 @@
+I"�<h3 id="regeditexe-실행후">Regedit.exe 실행후</h3>
+
+<p><br /><br /></p>
+
+<h3 id="32bit--64bit-dir-">32bit || 64bit Dir: <br /></h3>
+
+<p><em>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows</em> 에서</p>
+
+<ol>
+  <li><code class="highlighter-rouge">AppInit_DLLs</code> 에 경로 설정</li>
+  <li><code class="highlighter-rouge">LoadAppInit</code> value = 1</li>
+</ol>
+
+<p><br /></p>
+
+<h3 id="64bit-dir">64bit Dir:<br /></h3>
+
+<p><em>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows</em>에서<br /></p>
+
+<ol>
+  <li><code class="highlighter-rouge">AppInit_DLLs</code>에 경로설정</li>
+  <li><code class="highlighter-rouge">LoadAppInit</code> value = 1<br /><br /><br /><br /></li>
+</ol>
+:ET
