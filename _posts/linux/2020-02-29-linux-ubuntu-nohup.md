@@ -3,7 +3,10 @@ layout: post
 title: "[Linux, Ubuntu] nohup로 프로세스 켜기/끄기"
 subtitle: '서버pc가 종료되어도 프로세스 지속시키는 방법'
 author: "jjongwuner"
-header-style: text
+header-img: "img/post-bg-re-vs-ng2.jpg"
+header-mask: 0.3
+catalog:    true
+categories: web
 tags:
   - linux
   - vim
