@@ -16,6 +16,7 @@ tags:
 ---
 
 ## Problem
+![image](https://user-images.githubusercontent.com/16419202/75814820-c1428200-5dd5-11ea-92d4-0f5534fbc5d7.png)
 
 <br><br><br><br><br>
 ## Approach
@@ -83,5 +84,6 @@ int main() {
 ```
 
 ## Reference
-- [Modulus 활용 - (1)](https://github.com/jongwuner/ps-study/blob/master/exercise/Codeforce/1305C.cpp)
-- [Pigeon Hall 활용 - (1)][]
+- [Github](https://github.com/jongwuner/ps-study/blob/master/exercise/Codeforce/1305C.cpp)
+- [Modulus 활용 -(1)](https://github.com/jongwuner/ps-study/blob/master/exercise/Codeforce/1295D.cpp)
+- [Pigeon Hall 활용 - (1)]()
