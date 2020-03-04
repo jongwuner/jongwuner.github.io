@@ -41,7 +41,7 @@ tags:
   - 선형자료구조, 인덱스 초과 런타임 오류방지 `while(ptr < N && .... )`
 - String 빈자리 메꿀 때, s[i] = 0으로 하면 null이 되기때문에, s[i] = 1같은 방식이 좋다.  
 
-## Code
+## Code (Meet-In-The-Middle)
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -70,6 +70,66 @@ int main() {
 		pq.pop();
 	}
 	cout << "\n";
+	return 0;
+}
+```
+<br>
+## Code (Queue)
+N번 탐색에 대해서 Queue에 `(`와 `idx`를 같이 넣어준다. 이렇게 저장된 것을 다시 보면서
+`)`일때 현재 idx가 queue에 들어가있는 `(`를 순차적으로 보면서 그것을 가리키고 있는 idx가 
+현재 `)`을 보고 있는 idx보다는 항상 작아야 한다.  
+<br>
+```cpp
+#include <bits/stdc++.h>
+#define FIO ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
+#define FOR(a,b,c) for(int a = (b); a <= (c); a++)
+#define RFOR(a,b,c) for(int a = (b); a >= (c); a--)
+#define all(x) (x).begin(), (x).end()
+#define vi vector <int>
+#define vvi vector <vi>
+#define ll long long
+#define vll vector <ll>
+#define vvl vector <vll>
+#define pii pair<int,int>
+#define pll pair<ll,ll>
+#define eb emplace_back
+#define ep emplace
+#define fs first
+#define sd second
+using namespace std;
+
+int main() {
+	FIO;
+	//int t; cin >> t; while (t--) {
+		string s;
+		cin >> s;
+		stack <int> st;
+		queue <int> q;
+		vi ans;
+		int len = (int)s.size();
+		FOR(i, 0, len - 1) {
+			if (s[i] == '(') q.ep(i);
+		}
+		int cnt = len;
+		RFOR(i, len - 1, 0) {
+			if (s[i] == ')') {
+				if (q.empty()) break;
+				int a = q.front(); q.pop();
+				if (a > i) break;
+				
+				ans.eb(i);
+				ans.eb(a);
+				cnt -= 2;
+			}
+		}
+		sort(all(ans));
+		if ((int)ans.size()) {
+			cout << 1 << '\n';
+			cout << (int)ans.size() << '\n';
+			for (int i : ans) cout << i + 1 << ' ';
+		}
+		else cout << 0 << '\n';
+	//}
 	return 0;
 }
 ```
