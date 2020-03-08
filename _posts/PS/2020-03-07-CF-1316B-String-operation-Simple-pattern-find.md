@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Codeforces 1316A - Grade Allocation"
+title:      "Codeforces 1316B - Grade Allocation"
 subtitle:   "String 연산자, 규칙은 뇌비우고 뜯어봐야 한다, 단순한 규칙앞에서 멍때리지 말자, 홀짝규칙 기준"
 date:       2020-03-07 14:04:00
 author:     "jjongwuner"

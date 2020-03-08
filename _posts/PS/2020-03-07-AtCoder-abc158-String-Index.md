@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "AtCoder abc158 D - String Formation"
+title:      "AtCoder abc158D - String Formation"
 subtitle:   "String을 Front, Back에서 Push하고 Reverse 시키는 Query 문제"
 date:       2020-03-07 23:04:00
 author:     "jjongwuner"

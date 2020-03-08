@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Codeforces 1323B - "
+title:      "Codeforces 1323B - Count Subrectangles"
 subtitle:   "'소인수분해'를 통해 key 생성, 시간복잡도 비교."
 date:       2020-03-07 23:04:00
 author:     "jjongwuner"
