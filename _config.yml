@@ -1,5 +1,5 @@
 # Site settings
-title: "VAGABOND"
+title: "Jongwuner' Dev"
 SEOTitle: 기술을 기술하다 | jjongwuner's Blog
 header-img: img/home-bg.jpg
 email: jklh0202@gmail.com
@@ -13,12 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-#weibo_username:     jongwuner
-#zhihu_username:     jongwuner
 github_username:    jongwuner
 twitter_username:   jongwuner
-facebook_username:  jjongwuner
-linkedin_username:  jjongwuner
+facebook_username:  jwooner
+linkedin_username:  종원-이-155b5b133
 
 
 
@@ -55,15 +53,6 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
-
-
-
-# Disqus settings
-disqus_username: jongwuner
-
-# Netease settings
-netease_comment: false
-
 
 
 # Analytics settings
