@@ -2,7 +2,7 @@
 layout:     post
 title:      "system-monitor 서버구현기 - [Android, Spring-boot, Swing TEST"
 subtitle:   "Async-Long-Polling Server Based Spring-boot"
-date:       2020-03-03 04:01:00
+date:       2020-03-28 04:01:00
 author:     "jjongwuner"
 header-img: "img/post-bg-re-vs-ng2.jpg"
 header-mask: 0.3
